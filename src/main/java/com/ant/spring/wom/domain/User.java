@@ -5,17 +5,16 @@ import org.hibernate.annotations.Type;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 
 /**
  * Created by anthonyjones on 6/22/17.
  */
 @Entity
-@Table(name="USERS")
+@Table(name = "USERS")
 public class User {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "USER_ID")
     private Long id;
 
@@ -28,48 +27,45 @@ public class User {
     @JsonIgnore
     private String password;
 
-    @Column(name="FIRST_NAME")
+    @Column(name = "FIRST_NAME")
     @NotEmpty
     private String firstName;
 
-    @Column(name="LAST_NAME")
+    @Column(name = "LAST_NAME")
     @NotEmpty
     private String lastName;
 
-    @Column(name="ADMIN", columnDefinition="char(3)")
-    @Type(type="yes_no")
-    @NotEmpty
-    private boolean admin;
-
-    @Column(name = "TALENTS")
-    @NotEmpty
-    @JsonIgnore
-    private ArrayList<String> talents;
-
     @Column(name = "MAIN_JOB")
     @NotEmpty
-    @JsonIgnore
     private String mainJob;
 
     @Column(name = "SIDE_JOB")
     @NotEmpty
-    @JsonIgnore
     private String sideJob;
 
     @Column(name = "RATING")
     @NotEmpty
-    @JsonIgnore
     private Integer rating;
-
-    @Column(name = "REVIEWS")
-    @NotEmpty
-    @JsonIgnore
-    private ArrayList<String> reviews;
 
     @Column(name = "PHOTO")
     @NotEmpty
-    @JsonIgnore
     private String photo;
+
+    @Column(name = "ADMIN", columnDefinition = "char(3)")
+    @Type(type = "yes_no")
+    @NotEmpty
+    private boolean admin;
+
+    //    @Column(name = "REVIEWS")
+//    @NotEmpty
+//    @JsonIgnore
+//    private ArrayList<String> reviews;
+
+
+//    @Column(name = "TALENTS")
+//    @NotEmpty
+//    @JsonIgnore
+//    private ArrayList<String> talents;
 
 
     public Long getId() {
@@ -120,13 +116,13 @@ public class User {
         this.admin = admin;
     }
 
-    public ArrayList<String> getTalents() {
-        return talents;
-    }
-
-    public void setTalents(ArrayList<String> talents) {
-        this.talents = talents;
-    }
+//    public ArrayList<String> getTalents() {
+//        return talents;
+//    }
+//
+//    public void setTalents(ArrayList<String> talents) {
+//        this.talents = talents;
+//    }
 
     public String getMainJob() {
         return mainJob;
@@ -144,21 +140,21 @@ public class User {
         this.sideJob = sideJob;
     }
 
-    public Integer getRating() {
+    public int getRating() {
         return rating;
     }
 
-    public void setRating(Integer rating) {
+    public void setRating(int rating) {
         this.rating = rating;
     }
 
-    public ArrayList<String> getReviews() {
-        return reviews;
-    }
-
-    public void setReviews(ArrayList<String> reviews) {
-        this.reviews = reviews;
-    }
+//    public ArrayList<String> getReviews() {
+//        return reviews;
+//    }
+//
+//    public void setReviews(ArrayList<String> reviews) {
+//        this.reviews = reviews;
+//    }
 
     public String getPhoto() {
         return photo;
