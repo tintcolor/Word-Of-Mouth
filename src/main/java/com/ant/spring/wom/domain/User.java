@@ -1,10 +1,13 @@
 package com.ant.spring.wom.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sun.org.apache.regexp.internal.RE;
 import org.hibernate.annotations.Type;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
+import java.util.Set;
 
 /**
  * Created by anthonyjones on 6/22/17.
@@ -51,15 +54,25 @@ public class User {
     @NotEmpty
     private String photo;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "USER_ID")
+    private Set<Review> reviews;
+
     @Column(name = "ADMIN", columnDefinition = "char(3)")
     @Type(type = "yes_no")
     @NotEmpty
     private boolean admin;
 
-    //    @Column(name = "REVIEWS")
-//    @NotEmpty
-//    @JsonIgnore
-//    private ArrayList<String> reviews;
+
+    public Set<Review> getOptions() {
+        return reviews;
+    }
+
+    public void setOptions(Set<Review> options) {
+        this.reviews = options;
+    }
+
+
 
 
 //    @Column(name = "TALENTS")
