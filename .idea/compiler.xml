@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Word-Of-Mouth" target="1.5" />
+      <module name="Word-Of-Mouth" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
