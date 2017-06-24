@@ -74,7 +74,11 @@
             <artifactId>spring-web</artifactId>
             <version>4.3.9.RELEASE</version>
         </dependency>
-
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
 
     </dependencies>
 
