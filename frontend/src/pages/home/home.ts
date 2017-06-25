@@ -1,55 +1,46 @@
-import { Component } from '@angular/core';
-import { AuthService } from '../../providers/auth-service/auth-service';
-import { NavController, App, LoadingController, ToastController } from 'ionic-angular';
-import { LoginPage } from '../login/login';
+import {Component} from '@angular/core';
+import {JwtHelper, AuthHttp} from "angular2-jwt";
+// import {SERVER_URL} from "../../../config";
+import {AuthService} from "../../providers/auth-service/auth-service";
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
+  user: string;
+  message: string;
 
-  loading: any;
-  isLoggedIn: boolean = false;
+  constructor(private readonly authService: AuthService,
+              private readonly jwtHelper: JwtHelper,
+              private readonly  authHttp: AuthHttp) {
 
-  constructor(public app: App, public navCtrl: NavController, public authService: AuthService, public loadingCtrl: LoadingController, private toastCtrl: ToastController) {
-    if(localStorage.getItem("token")) {
-      this.isLoggedIn = true;
-    }
+    this.authService.authUser.subscribe(jwt => {
+      if (jwt) {
+        const decoded = this.jwtHelper.decodeToken(jwt);
+        this.user = decoded.sub
+      }
+      else {
+        this.user = null;
+      }
+    });
+
+  }
+
+
+// Alter http for new user, it should direct them to another page to fill out form, and not call
+//8080/user
+//when this page is hit, it automatically loads up content
+  ionViewWillEnter() {
+    this.authHttp.get(`http://localhost:8080/user`).subscribe(
+      data =>   console.log(data.json),//this.message = data.text()
+      err => console.log(err)
+    );
+  
   }
 
   logout() {
-    this.authService.logout().then((result) => {
-      this.loading.dismiss();
-      let nav = this.app.getRootNav();
-      nav.setRoot(LoginPage);
-    }, (err) => {
-      this.loading.dismiss();
-      this.presentToast(err);
-    });
-  }
-
-  showLoader(){
-    this.loading = this.loadingCtrl.create({
-        content: 'Authenticating...'
-    });
-
-    this.loading.present();
-  }
-
-  presentToast(msg) {
-    let toast = this.toastCtrl.create({
-      message: msg,
-      duration: 3000,
-      position: 'bottom',
-      dismissOnPageChange: true
-    });
-
-    toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
-    });
-
-    toast.present();
+    this.authService.logout();
   }
 
 }

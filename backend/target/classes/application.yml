@@ -1,8 +1,14 @@
-jwt:
-  header: Authorization
-  secret: mySecret
-  expiration: 604800
-  route:
-    authentication:
-      path: auth
-      refresh: refresh
+app:
+  secret: the_secret
+  token-validity-in-seconds: 2592000
+
+security:
+  ignored:
+    - none
+
+spring:
+  mvc:
+    favicon:
+      enabled: false
+  resources:
+    add-mappings: false

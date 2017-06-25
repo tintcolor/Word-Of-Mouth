@@ -1,28 +1,21 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
+    <ion-title>
+      Logged in
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="logout()">
+        <ion-icon name="exit"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-<!--<ion-input type="email" [value]="email" placeholder="Email Input"></ion-input>-->
-<ion-input [value]="email" placeholder="Email Input" (input)="email = $event.target.value"></ion-input>
-  <ion-input [value]="password" placeholder="Password Input" (input)="password = $event.target.value"></ion-input>
- <!--<ion-input type="password" placeholder="Password Input"></ion-input>-->
- <button ion-button (click)="getdata()">Login</button>
+  Welcome <strong>{{user}}</strong>
 
-  <button ion-button clear (click)="logout()">
-      <ion-icon name="log-out"></ion-icon>
-    </button>
-
-<br>
-
-<ion-input type="email" placeholder="Email Input"></ion-input>
- <ion-input type="password" placeholder="Password Input"></ion-input>
- <button ion-button (click)="getdata()">Login</button>
-
-
+  <p>
+    Message from the secret service:
+    <strong>{{message}}</strong>
+  </p>
 </ion-content>

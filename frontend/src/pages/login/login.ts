@@ -1,9 +1,7 @@
-import { Component } from '@angular/core';
-import { NavController, LoadingController, ToastController } from 'ionic-angular';
-import { AuthService } from '../../providers/auth-service/auth-service';
-// import { TabsPage } from '../tabs/tabs';
-import { Http } from '@angular/http';
-import { RegisterPage } from '../register/register';
+import {Component} from '@angular/core';
+import {NavController, LoadingController, ToastController} from 'ionic-angular';
+import {SignupPage} from "../signup/signup";
+import {AuthService} from "../../providers/auth-service/auth-service";
 
 @Component({
   selector: 'page-login',
@@ -11,73 +9,45 @@ import { RegisterPage } from '../register/register';
 })
 export class LoginPage {
 
-  loading: any;
-  loginData = { username: '', password: '' };
-  data: any;
-  user: any;
-  email: any;
-  password: any;
-
-  constructor(public navCtrl: NavController,
-    public authService: AuthService,
-    public loadingCtrl: LoadingController,
-    private toastCtrl: ToastController, public http: Http) { }
-
-  doLogin() {
-    // this.showLoader();
-    // this.authService.login(this.loginData).then((result) => {
-    //   this.loading.dismiss();
-    //   this.data = result;
-    //   localStorage.setItem('token', this.data.access_token);
-    //   // this.navCtrl.setRoot(TabsPage);
-    // }, (err) => {
-    //   this.loading.dismiss();
-    //   this.presentToast(err);
-    // });
+  constructor(private readonly navCtrl: NavController,
+              private readonly loadingCtrl: LoadingController,
+              private readonly authService: AuthService,
+              private readonly toastCtrl: ToastController) {
   }
 
-
-
-
-
-  getdata() {
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    // headers.append('Access-Control-Allow-Origin', '*');
-
-
-
-    //console.log(data);
-    this.http.post('http://localhost:8080/v1/user?username=' + this.email + '&password=' + this.password, headers).
-      map(res => res.json()).subscribe(data => {
-        this.user = data;
-        console.log(data);
-      });
+  signup() {
+    this.navCtrl.push(SignupPage);
   }
 
-
-  register() {
-    this.navCtrl.push(RegisterPage);
-  }
-
-  showLoader() {
-    this.loading = this.loadingCtrl.create({
-      content: 'Authenticating...'
+  login(value: any) {
+    let loading = this.loadingCtrl.create({
+      spinner: 'bubbles',
+      content: 'Logging in ...'
     });
 
-    this.loading.present();
+    loading.present();
+
+    this.authService
+      .login(value)
+      .finally(() => loading.dismiss())
+      .subscribe(
+        () => {},
+        err => this.handleError(err));
   }
 
-  presentToast(msg) {
-    let toast = this.toastCtrl.create({
-      message: msg,
-      duration: 3000,
-      position: 'bottom',
-      dismissOnPageChange: true
-    });
+  handleError(error: any) {
+    let message: string;
+    if (error.status && error.status === 401) {
+      message = 'Login failed';
+    }
+    else {
+      message = `Unexpected error: ${error.statusText}`;
+    }
 
-    toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+    const toast = this.toastCtrl.create({
+      message,
+      duration: 5000,
+      position: 'bottom'
     });
 
     toast.present();

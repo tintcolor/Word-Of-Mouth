@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.org.apache.regexp.internal.RE;
 import org.hibernate.annotations.Type;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
@@ -21,47 +22,41 @@ public class User {
     @Column(name = "USER_ID")
     private Long id;
 
-    @Column(name = "USERNAME")
-    @NotEmpty
     private String username;
 
-    @Column
-    @NotEmpty
-    @JsonIgnore
+    private String name;
+
+    private String email;
+
+//    @JsonIgnore
     private String password;
 
     @Column(name = "FIRST_NAME")
-    @NotEmpty
     private String firstName;
 
     @Column(name = "LAST_NAME")
-    @NotEmpty
     private String lastName;
 
     @Column(name = "MAIN_JOB")
-    @NotEmpty
     private String mainJob;
 
     @Column(name = "SIDE_JOB")
-    @NotEmpty
     private String sideJob;
 
     @Column(name = "RATING")
-    @NotEmpty
     private Integer rating;
 
     @Column(name = "PHOTO")
-    @NotEmpty
     private String photo;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "USER_ID")
     private Set<Review> reviews;
 
-    @Column(name = "ADMIN", columnDefinition = "char(3)")
-    @Type(type = "yes_no")
-    @NotEmpty
-    private boolean admin;
+//    @Column(name = "ADMIN", columnDefinition = "char(3)")
+//    @Type(type = "yes_no")
+//    @NotEmpty
+//    private boolean admin;
 
 
     public Set<Review> getOptions() {
@@ -71,8 +66,6 @@ public class User {
     public void setOptions(Set<Review> options) {
         this.reviews = options;
     }
-
-
 
 
 //    @Column(name = "TALENTS")
@@ -121,13 +114,13 @@ public class User {
         this.lastName = lastName;
     }
 
-    public boolean isAdmin() {
-        return admin;
-    }
-
-    public void setAdmin(boolean admin) {
-        this.admin = admin;
-    }
+//    public boolean isAdmin() {
+//        return admin;
+//    }
+//
+//    public void setAdmin(boolean admin) {
+//        this.admin = admin;
+//    }
 
 //    public ArrayList<String> getTalents() {
 //        return talents;
@@ -175,5 +168,25 @@ public class User {
 
     public void setPhoto(String photo) {
         this.photo = photo;
+    }
+
+    public void encodePassword(PasswordEncoder passwordEncoder) {
+        this.password = passwordEncoder.encode(this.password);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

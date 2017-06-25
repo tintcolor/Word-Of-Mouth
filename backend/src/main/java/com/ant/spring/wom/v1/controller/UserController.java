@@ -22,9 +22,9 @@ public class UserController {
     @Inject
     private UserRepository userRepository;
 
-    @RequestMapping(value = "/users", method = RequestMethod.GET)
-    public ResponseEntity<Iterable<User>> getAllUsers(){
-        Iterable<User> allUsers = userRepository.findAll();
-        return new ResponseEntity<>(allUsers, HttpStatus.OK);
-    }
+//    @RequestMapping(value = "/users", method = RequestMethod.GET)
+//    public ResponseEntity<Iterable<User>> getAllUsers(){
+//        Iterable<User> allUsers = userRepository.findAll();
+//        return new ResponseEntity<>(allUsers, HttpStatus.OK);
+//    }
 }
