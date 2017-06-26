@@ -25,6 +25,7 @@ export class SignupPage {
 
     loading.present();
 
+//Go to authService here!
     this.authService
       .signup(value)
       .finally(() => loading.dismiss())

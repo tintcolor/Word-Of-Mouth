@@ -36,7 +36,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/signup").permitAll()
                 .antMatchers("/login").permitAll()
                 .antMatchers("/public").permitAll()
-                .anyRequest().authenticated()
+                //.anyRequest().authenticated()// to use postman
                 .and()
                 .apply(new JWTConfigurer(this.tokenProvider));
         // @formatter:on

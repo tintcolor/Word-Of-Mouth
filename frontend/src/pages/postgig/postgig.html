@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Sign up</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <form #form="ngForm" (ngSubmit)="sendJson(form.value)" novalidate>
+    <ion-list>
+
+
+<ion-item>
+        <ion-label floating>Seeking</ion-label>
+        <ion-input type="text" name="seeking" ngModel  #name="ngModel"
+                   [class.invalid]="name.errors && name.dirty"></ion-input>
+      </ion-item>
+
+<ion-item>
+  <ion-label>Seeking</ion-label>
+  <ion-select >
+    <ion-option value="f">Sound Mixer</ion-option>
+    <ion-option value="m">Editor</ion-option>
+  </ion-select>
+</ion-item>
+
+
+
+
+<ion-item>
+        <!--<ion-label floating>Date</ion-label>-->
+        <ion-input type="date" name="date" ngModel  #password="ngModel"
+                   [class.invalid]="password.errors && password.dirty"></ion-input>
+      </ion-item>
+
+      
+
+
+      <ion-item> 
+        <ion-label floating>Description</ion-label>
+        <ion-input type="text" name="description" ngModel #email="ngModel"
+                   ></ion-input>
+      </ion-item> 
+     
+     <ion-item>
+        <ion-label floating>Rate</ion-label>
+        <ion-input type="text" name="rate" ngModel  #username="ngModel"
+                   [class.invalid]="username.errors && username.dirty"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Location</ion-label>
+        <ion-input type="text" name="location" ngModel  #username="ngModel"
+                   [class.invalid]="username.errors && username.dirty"></ion-input>
+      </ion-item>
+     
+
+      
+      
+
+      <div padding>
+        <button ion-button color="primary" block type="submit" [disabled]="!form.valid">Sign up</button>
+      </div>
+
+    </ion-list>
+  </form>
+</ion-content>

@@ -30,7 +30,6 @@ public class AuthController {
 
     private final TokenProvider tokenProvider;
 
-
     private final PasswordEncoder passwordEncoder;
 
     private final AuthenticationManager authenticationManager;

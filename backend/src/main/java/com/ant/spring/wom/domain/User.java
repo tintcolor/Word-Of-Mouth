@@ -19,23 +19,22 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "USER_ID")
+    @Column(name = "ID")
     private Long id;
 
+    @Column(name = "USERNAME")
     private String username;
 
     private String name;
 
+    @Column(name = "EMAIL")
     private String email;
 
-//    @JsonIgnore
+    //    @JsonIgnore
     private String password;
 
     @Column(name = "FIRST_NAME")
     private String firstName;
-
-    @Column(name = "LAST_NAME")
-    private String lastName;
 
     @Column(name = "MAIN_JOB")
     private String mainJob;
@@ -49,9 +48,9 @@ public class User {
     @Column(name = "PHOTO")
     private String photo;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "USER_ID")
-    private Set<Review> reviews;
+//    @OneToMany(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "USER_ID")
+//    private Set<Review> reviews;
 
 //    @Column(name = "ADMIN", columnDefinition = "char(3)")
 //    @Type(type = "yes_no")
@@ -59,13 +58,13 @@ public class User {
 //    private boolean admin;
 
 
-    public Set<Review> getOptions() {
-        return reviews;
-    }
-
-    public void setOptions(Set<Review> options) {
-        this.reviews = options;
-    }
+//    public Set<Review> getOptions() {
+//        return reviews;
+//    }
+//
+//    public void setOptions(Set<Review> options) {
+//        this.reviews = options;
+//    }
 
 
 //    @Column(name = "TALENTS")
@@ -104,14 +103,6 @@ public class User {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
 //    public boolean isAdmin() {

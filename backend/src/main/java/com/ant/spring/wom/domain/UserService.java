@@ -36,12 +36,7 @@ public class UserService {
     }
 
     public void initDatabase() {
-//        userRepository.findAll().forEach(item -> System.out.println(item));
-//        userRepository.findAll().forEach(item -> System.out.println(item.getUsername()+" " +item));
 
-//        userRepository.findAll().iterator().forEachRemaining(item -> item.setPassword(passwordEncoder.encode(item.getPassword())));
-
-        userRepository.findAll().forEach(item -> database.put(item.getUsername(), item));
 //        userRepository.findByUsername("mickey@disney.com").setPassword(this.passwordEncoder.encode("admin"));//.setPassword(passwordEncoder.encode(userRepository.findByUsername("mickey@disney.com").getPassword()));
 
 //        database.keySet().iterator().
@@ -49,12 +44,10 @@ public class UserService {
 //                        .setPassword(passwordEncoder.encode(userRepository.findByUsername(username).getPassword())));
 //        database.keySet().iterator().
 //                forEachRemaining(username -> System.out.println(username));
-
+//        System.out.println("Asdf");
+//        System.out.println(userRepository.findByUsername("mickey").getUsername());
+        userRepository.findAll().forEach(item -> database.put(item.getUsername(), item));
         database.get("mickey").setPassword(passwordEncoder.encode(userRepository.findByUsername("mickey").getPassword()));
-        System.out.println(database.size() + " HERE");
-        System.out.println(database.get("admin").getPassword());
-        System.out.println(userRepository.count());
-
 
     }
 

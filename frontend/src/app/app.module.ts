@@ -15,6 +15,10 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from "../pages/login/login";
 import { SignupPage } from "../pages/signup/signup";
+import { GigsPage } from "../pages/gigs/gigs"
+import { PostgigPage } from "../pages/postgig/postgig"
+
+
 
 import { AuthService } from "../providers/auth-service/auth-service";
 
@@ -39,7 +43,9 @@ const routes: Routes = [
     HomePage,
     ListPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    GigsPage,
+    PostgigPage
     // RegisterPage
   ],
   imports: [
@@ -59,7 +65,9 @@ const routes: Routes = [
     HomePage,
     ListPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    GigsPage,
+    PostgigPage
     // RegisterPage
   ],
   providers: [
