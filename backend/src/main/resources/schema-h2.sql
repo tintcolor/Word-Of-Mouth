@@ -29,7 +29,7 @@ insert into users (username, password, name, first_name,  main_job, side_job, em
 
 
 
-
+--Remember, everything has to be be verbatim with the class
 
 DROP TABLE GIGS;
 --
@@ -42,5 +42,7 @@ LOCATION VARCHAR2(255) DEFAULT NULL,
 DATE VARCHAR2(255) DEFAULT NULL,
 USERID NUMBER(10,0) NOT NULL);
 
-insert into gigs (seeking, description, rate, location, date,userid) values('Sound mixer', 'Looking for a great Sound mixer to work on my project', '$150/day','NYC','2017-12-17',1);
-insert into gigs (seeking, description, rate, location, date,userid) values('Sound mixer', 'Looking for a great Sound mixer to work on my project', '$150/day','NYC','2017-12-17',1);
+insert into gigs (seeking, description, rate, location, date, userid) values('Sound mixer', 'Looking for a great Sound mixer to work on my project', '$150/day','NYC','2017-12-17', 1);
+insert into gigs (seeking, description, rate, location, date, userid) values('Sound mixer', 'Looking for a great Sound mixer to work on my project', '$150/day','NYC','2017-12-17', 1);
+insert into gigs (seeking, description, rate, location, date, userid) values('Sound editor', 'Work for me!', '$340/day','LA','2017-12-17', 2);
+insert into gigs (seeking, description, rate, location, date, userid) values('Sound editor', 'Work for me!', '$340/day','LA','2017-12-17', 3);

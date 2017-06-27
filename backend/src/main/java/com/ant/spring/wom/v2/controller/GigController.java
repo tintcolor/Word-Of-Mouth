@@ -39,15 +39,35 @@ public class GigController {
     @RequestMapping(value = "/postgig", method = RequestMethod.POST)
     @CrossOrigin
     public ResponseEntity<Void> createGig(@RequestBody Gigs newPostGig) {
-        newPostGig = gigRepository.save(newPostGig);
-//        System.out.println( gigRepository.findBySeeking("asdf").getDate());
 
-        System.out.println(newPostGig.getSeeking());
+//        System.out.println(newPostGig.getUserID());
+
+        newPostGig = gigRepository.save(newPostGig);
+
+
+
+        System.out.println(newPostGig.getDate());
         System.out.println(newPostGig.getDescription());
+        System.out.println(newPostGig.getLocation());
+        System.out.println(newPostGig.getRate());
+        System.out.println(newPostGig.getSeeking());
+
+        System.out.println(newPostGig.getUserID() + " The Id");
 
         return new ResponseEntity<>(HttpStatus.CREATED);
 
     }
+//
+//    @RequestMapping(value = "/postgig/", method = RequestMethod.PUT)
+//    @CrossOrigin
+//    public ResponseEntity<Void> updateGig(@RequestBody Gigs newPostGig) {
+//        newPostGig = gigRepository.save(newPostGig);
+////        System.out.println( gigRepository.findBySeeking("asdf").getDate());
+//
+//
+//        return new ResponseEntity<>(HttpStatus.CREATED);
+//
+//    }
 
 
 //    @RequestMapping(value = "/gigsforme", method = RequestMethod.GET)
@@ -66,7 +86,7 @@ public class GigController {
 //
 //            User g = userRepository.findByUsername(user);
 //
-////            JsonObject object = new JsonObject("currentUser");
+//           JsonObject object = new JsonObject("currentUser");
 //
 //
 //            return new ResponseEntity<>(currentUser, HttpStatus.OK);

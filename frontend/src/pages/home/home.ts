@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, LoadingController, ToastController } from 'ionic-angular';
+import { NavController, LoadingController, ToastController, NavParams } from 'ionic-angular';
 import { JwtHelper, AuthHttp } from "angular2-jwt";
 // import {SERVER_URL} from "../../../config";
 import { AuthService } from "../../providers/auth-service/auth-service";
@@ -12,6 +12,7 @@ import { PostgigPage } from "../../pages/postgig/postgig"
 })
 export class HomePage {
   user: string;
+  userID:any;
   username: string;
   pageData:any;
   name:any;
@@ -25,7 +26,7 @@ export class HomePage {
   constructor(private readonly authService: AuthService,
     private readonly jwtHelper: JwtHelper,
     private readonly authHttp: AuthHttp,
-    private navCtrl: NavController) {
+    private navCtrl: NavController,public navParam:NavParams) {
 
     this.authService.authUser.subscribe(jwt => {
       if (jwt) {
@@ -49,9 +50,12 @@ export class HomePage {
         // console.log(data.json())
         
         this.displayPage(data);
+        this.userID = data.json().userID;
+        console.log(this.userID);
       },//this.message = data.text() 
       err => console.log(err)
     );
+
 
   }
 
@@ -67,12 +71,12 @@ export class HomePage {
   }
 
   showGigs() {
-    this.navCtrl.push(GigsPage);
+    this.navCtrl.push(GigsPage,this.userID);
     console.log("asdfads");
   }
 
   createGig() {
-    this.navCtrl.push(PostgigPage);
+    this.navCtrl.push(PostgigPage,this.userID);
 
   }
 

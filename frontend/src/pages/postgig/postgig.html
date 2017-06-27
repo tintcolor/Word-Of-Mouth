@@ -10,53 +10,47 @@
     <ion-list>
 
 
-<ion-item>
+      <!--<ion-item>
         <ion-label floating>Seeking</ion-label>
         <ion-input type="text" name="seeking" ngModel  #name="ngModel"
                    [class.invalid]="name.errors && name.dirty"></ion-input>
+      </ion-item>-->
+
+      <ion-item>
+        <ion-label>Seeking</ion-label>
+        <ion-select type="select" name="seeking" ngModel #seeking="ngModel">
+          <ion-option value="Sound Mixer">Sound Mixer</ion-option>
+          <ion-option value="Editor">Editor</ion-option>
+        </ion-select>
       </ion-item>
 
-<ion-item>
-  <ion-label>Seeking</ion-label>
-  <ion-select >
-    <ion-option value="f">Sound Mixer</ion-option>
-    <ion-option value="m">Editor</ion-option>
-  </ion-select>
-</ion-item>
-
-
-
-
-<ion-item>
+      <ion-item>
         <!--<ion-label floating>Date</ion-label>-->
-        <ion-input type="date" name="date" ngModel  #password="ngModel"
-                   [class.invalid]="password.errors && password.dirty"></ion-input>
+        <ion-input type="date" name="date" ngModel #date="ngModel"></ion-input>
       </ion-item>
 
-      
 
 
-      <ion-item> 
+
+      <ion-item>
         <ion-label floating>Description</ion-label>
-        <ion-input type="text" name="description" ngModel #email="ngModel"
-                   ></ion-input>
-      </ion-item> 
-     
-     <ion-item>
+        <ion-input type="text" name="description" ngModel #description="ngModel"></ion-input>
+      </ion-item>
+
+      <ion-item>
         <ion-label floating>Rate</ion-label>
-        <ion-input type="text" name="rate" ngModel  #username="ngModel"
-                   [class.invalid]="username.errors && username.dirty"></ion-input>
+        <ion-input type="text" name="rate" ngModel #rate="ngModel"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>Location</ion-label>
-        <ion-input type="text" name="location" ngModel  #username="ngModel"
-                   [class.invalid]="username.errors && username.dirty"></ion-input>
+        <ion-input type="text" name="location" ngModel #location="ngModel" ></ion-input>
       </ion-item>
-     
 
-      
-      
+
+      <!--<ion-item>
+        <ion-input type="number" name="userID" ngModel #userID="ngModel">{{userID}}</ion-input>
+      </ion-item>-->
 
       <div padding>
         <button ion-button color="primary" block type="submit" [disabled]="!form.valid">Sign up</button>

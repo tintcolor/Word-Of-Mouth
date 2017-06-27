@@ -4,6 +4,9 @@ package com.ant.spring.wom.domain;
  * Created by anthonyjones on 6/25/17.
  */
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -31,6 +34,33 @@ public class Gigs {
     @Column(name = "SEEKING")
     private String seeking;
 
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name="USERID")
+//    @JsonIgnore
+//    private User user;
+
+    //    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name="USERID")
+//    @JsonIgnore
+
+    @Column(name = "USERID")
+    private int userID;
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
+
+//    public User getUser() {
+//        return user;
+//    }
+//
+//    public void setUser(User user) {
+//        this.user = user;
+//    }
 
     public Long getGigID() {
         return gigID;

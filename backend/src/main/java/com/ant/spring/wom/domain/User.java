@@ -44,6 +44,7 @@ public class User {
     @Column(name = "PHOTO")
     private String photo;
 
+    //This is correct, it's linking telling the set gigs to link to the user id
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "USERID")
     @OrderBy

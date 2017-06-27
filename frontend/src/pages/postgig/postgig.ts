@@ -22,6 +22,9 @@ import { ReplaySubject, Observable } from "rxjs";
   templateUrl: 'postgig.html',
 })
 export class PostgigPage {
+
+  userID: Number;
+
   @ViewChild('username')
   usernameModel: NgModel;
   authUser = new ReplaySubject<any>(1);
@@ -29,22 +32,28 @@ export class PostgigPage {
     private readonly authHttp: AuthHttp,
     private readonly jwtHelper: JwtHelper,
     public http: Http,
-    private readonly storage: Storage, ) {
+    private readonly storage: Storage,
+    public navParam: NavParams) {
+
+      this.userID = 30;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PostgigPage');
+    // console.log(this.navParams);
+
+    
   }
 
 
   sendJson(values: any) {
+    console.log(this.userID);
+    values["userid"] = this.userID;
+
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
-    // let myHeaders: Headers = new Headers
-    // myHeaders.append('Content-type', 'application/json; charset=UTF-8')
-
-    // console.log("ouch")
+   
     console.log(values);
     return this.http.post('http://localhost:8080/postgig', values, options)
       .map(res => res.text())
