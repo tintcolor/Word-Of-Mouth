@@ -13,26 +13,31 @@ public class Gigs {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "GIG_ID")
-    private Long id;
+    @Column(name = "GIGID")
+    private Long gigID;
 
+    @Column(name = "DATE")
     private Date date;
 
-    private String seeking;
-
+    @Column(name = "DESCRIPTION")
     private String description;
 
-    private String rate;
-
+    @Column(name = "LOCATION")
     private String location;
 
+    @Column(name = "RATE")
+    private String rate;
 
-    public Long getId() {
-        return id;
+    @Column(name = "SEEKING")
+    private String seeking;
+
+
+    public Long getGigID() {
+        return gigID;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setGigID(Long gigID) {
+        this.gigID = gigID;
     }
 
     public Date getDate() {

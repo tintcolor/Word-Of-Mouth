@@ -1,9 +1,5 @@
 package com.ant.spring.wom.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.sun.org.apache.regexp.internal.RE;
-import org.hibernate.annotations.Type;
-import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
@@ -19,8 +15,8 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ID")
-    private Long id;
+    @Column(name = "USERID")
+    private Long userID;
 
     @Column(name = "USERNAME")
     private String username;
@@ -48,9 +44,12 @@ public class User {
     @Column(name = "PHOTO")
     private String photo;
 
-//    @OneToMany(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "USER_ID")
-//    private Set<Review> reviews;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "USERID")
+    @OrderBy
+    @Size(min=2,max=6)
+    private Set<Gigs> gigPost;
+
 
 //    @Column(name = "ADMIN", columnDefinition = "char(3)")
 //    @Type(type = "yes_no")
@@ -58,13 +57,13 @@ public class User {
 //    private boolean admin;
 
 
-//    public Set<Review> getOptions() {
-//        return reviews;
-//    }
-//
-//    public void setOptions(Set<Review> options) {
-//        this.reviews = options;
-//    }
+    public Set<Gigs> getGigPost() {
+        return gigPost;
+    }
+
+    public void setGigPost(Set<Gigs> gigPost) {
+        this.gigPost = gigPost;
+    }
 
 
 //    @Column(name = "TALENTS")
@@ -73,12 +72,12 @@ public class User {
 //    private ArrayList<String> talents;
 
 
-    public Long getId() {
-        return id;
+    public Long getUserID() {
+        return userID;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setUserID(Long userID) {
+        this.userID = userID;
     }
 
     public String getUsername() {

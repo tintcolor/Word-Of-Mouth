@@ -57,7 +57,7 @@ public class GigController {
 ////        System.out.println(principal.getName());
 //        String user = principal.getName();
 //
-//        User currentUser = userRepository.findOne(userRepository.findByUsername(user).getId());
+//        User currentUser = userRepository.findOne(userRepository.findByUsername(user).getUserID());
 //        if(currentUser == null){
 //            return null;
 //        }else {

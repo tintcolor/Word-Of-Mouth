@@ -3,14 +3,11 @@ package com.ant.spring.wom.v2.controller;
 import com.ant.spring.wom.domain.User;
 import com.ant.spring.wom.repository.UserRepository;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
-import javax.json.Json;
-import javax.json.JsonObject;
 import javax.servlet.http.HttpServletResponse;
 import java.security.Principal;
 
@@ -39,7 +36,7 @@ public class UserController {
     public Object currentUserName(Principal principal, HttpServletResponse http) {
         SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String user = principal.getName();
-        User currentUser = userRepository.findOne(userRepository.findByUsername(user).getId());
+        User currentUser = userRepository.findOne(userRepository.findByUsername(user).getUserID());
         if(currentUser == null){
             return null;
         }else {
