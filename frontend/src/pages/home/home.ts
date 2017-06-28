@@ -63,6 +63,8 @@ export class HomePage {
     this.username = info.json().username;
     this.rating = info.json().rating;
     this.firstName = info.json().firstName;
+    this.name = info.json().name;
+    this.mainJob = info.json().mainJob;
     // console.log(info);
   }
 

@@ -22,9 +22,7 @@ import { ReplaySubject, Observable } from "rxjs";
   templateUrl: 'postgig.html',
 })
 export class PostgigPage {
-
-  userID: Number;
-
+  userID: any;
   @ViewChild('username')
   usernameModel: NgModel;
   authUser = new ReplaySubject<any>(1);
@@ -34,15 +32,13 @@ export class PostgigPage {
     public http: Http,
     private readonly storage: Storage,
     public navParam: NavParams) {
-
-      this.userID = 30;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PostgigPage');
     // console.log(this.navParams);
 
-    
+    this.userID = this.navParams.data;
   }
 
 

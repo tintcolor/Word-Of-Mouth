@@ -2,21 +2,13 @@ package com.ant.spring.wom.v2.controller;
 
 
 import com.ant.spring.wom.domain.Gigs;
-import com.ant.spring.wom.domain.User;
 import com.ant.spring.wom.repository.GigRepository;
-import com.ant.spring.wom.repository.UserRepository;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.inject.Inject;
-import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
-import java.net.URI;
-import java.security.Principal;
 
 /**
  * Created by anthonyjones on 6/25/17.
@@ -38,21 +30,16 @@ public class GigController {
 
     @RequestMapping(value = "/postgig", method = RequestMethod.POST)
     @CrossOrigin
-    public ResponseEntity<Void> createGig(@RequestBody Gigs newPostGig) {
+    public ResponseEntity<Void> createGig(@Valid @RequestBody Gigs newPostGig) {
 
-//        System.out.println(newPostGig.getUserID());
+//        System.out.println(newPostGig.getDate());
+//        System.out.println(newPostGig.getDescription());
+//        System.out.println(newPostGig.getLocation());
+//        System.out.println(newPostGig.getRate());
+//        System.out.println(newPostGig.getSeeking());
+//        System.out.println(newPostGig.getUserid());
 
-        newPostGig = gigRepository.save(newPostGig);
-
-
-
-        System.out.println(newPostGig.getDate());
-        System.out.println(newPostGig.getDescription());
-        System.out.println(newPostGig.getLocation());
-        System.out.println(newPostGig.getRate());
-        System.out.println(newPostGig.getSeeking());
-
-        System.out.println(newPostGig.getUserID() + " The Id");
+        gigRepository.save(newPostGig);
 
         return new ResponseEntity<>(HttpStatus.CREATED);
 
@@ -77,7 +64,7 @@ public class GigController {
 ////        System.out.println(principal.getName());
 //        String user = principal.getName();
 //
-//        User currentUser = userRepository.findOne(userRepository.findByUsername(user).getUserID());
+//        User currentUser = userRepository.findOne(userRepository.findByUsername(user).getUserid());
 //        if(currentUser == null){
 //            return null;
 //        }else {

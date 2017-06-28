@@ -36,7 +36,7 @@ public class UserController2 {
 //        SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 //
 //        String user = principal.getName();
-//        User currentUser = userRepository.findOne(userRepository.findByUsername(user).getUserID());
+//        User currentUser = userRepository.findOne(userRepository.findByUsername(user).getUserid());
 //        User g = userRepository.findByUsername(user);
 //
 //        return new ResponseEntity<>(currentUser, HttpStatus.OK);

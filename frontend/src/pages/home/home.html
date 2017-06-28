@@ -12,12 +12,14 @@
 </ion-header>
 
 <ion-content padding>
-  Welcome <strong>{{user}}</strong>
+  Welcome <strong>{{firstName}}</strong>
 
   <p>
-    <strong>Username: {{username}}</strong>
-    <strong>Rating: {{rating}}</strong>
-    <strong>First Name: {{firstName}}</strong> 
+    <strong>Username: {{username}}</strong><br>
+    <strong>Rating: {{rating}}</strong><br>
+    <strong>Current Rating: {{rating}}</strong> <br>
+    <strong>Name: {{name}}</strong> <br>
+    <strong>Main Job: {{mainJob}}</strong> <br>
     <button (click)="showGigs()">Click me to see gigs</button>
   </p>
 

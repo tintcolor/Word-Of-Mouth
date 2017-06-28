@@ -4,9 +4,6 @@ package com.ant.spring.wom.domain;
  * Created by anthonyjones on 6/25/17.
  */
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.util.Date;
 
@@ -44,14 +41,14 @@ public class Gigs {
 //    @JsonIgnore
 
     @Column(name = "USERID")
-    private int userID;
+    private int userid;
 
-    public int getUserID() {
-        return userID;
+    public int getUserid() {
+        return userid;
     }
 
-    public void setUserID(int userID) {
-        this.userID = userID;
+    public void setUserid(int userid) {
+        this.userid = userid;
     }
 
 //    public User getUser() {

@@ -12,9 +12,7 @@ EMAIL VARCHAR2(255) DEFAULT NULL,
 RATING NUMBER(255) DEFAULT NULL,
 PHOTO VARCHAR2(255) DEFAULT NULL);
 --
-DROP SEQUENCE hibernate_sequence;
 
-CREATE SEQUENCE hibernate_sequence;
 
 
 insert into users (username, password, name, first_name,  main_job, side_job, email, rating, photo) values( 'mickey', 'cheese','Mickey Mouse', 'Mickey','Sound Mixer','Editor','soma@as.com',3,'http://img.img.com');
@@ -42,7 +40,12 @@ LOCATION VARCHAR2(255) DEFAULT NULL,
 DATE VARCHAR2(255) DEFAULT NULL,
 USERID NUMBER(10,0) NOT NULL);
 
-insert into gigs (seeking, description, rate, location, date, userid) values('Sound mixer', 'Looking for a great Sound mixer to work on my project', '$150/day','NYC','2017-12-17', 1);
-insert into gigs (seeking, description, rate, location, date, userid) values('Sound mixer', 'Looking for a great Sound mixer to work on my project', '$150/day','NYC','2017-12-17', 1);
-insert into gigs (seeking, description, rate, location, date, userid) values('Sound editor', 'Work for me!', '$340/day','LA','2017-12-17', 2);
-insert into gigs (seeking, description, rate, location, date, userid) values('Sound editor', 'Work for me!', '$340/day','LA','2017-12-17', 3);
+-- insert into gigs (seeking, description, rate, location, date, userid) values('Sound mixer', 'Looking for a great Sound mixer to work on my project', '$150/day','NYC','2017-12-17', 1);
+-- insert into gigs (seeking, description, rate, location, date, userid) values('Sound mixer', 'Looking for a great Sound mixer to work on my project', '$150/day','NYC','2017-12-17', 1);
+-- insert into gigs (seeking, description, rate, location, date, userid) values('Sound editor', 'Work for me!', '$340/day','LA','2017-12-17', 2);
+-- insert into gigs (seeking, description, rate, location, date, userid) values('Sound editor', 'Work for me!', '$340/day','LA','2017-12-17', 3);
+
+
+DROP SEQUENCE hibernate_sequence;
+
+CREATE SEQUENCE hibernate_sequence;
