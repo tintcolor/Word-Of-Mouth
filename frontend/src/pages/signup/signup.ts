@@ -33,7 +33,6 @@ export class SignupPage {
         (jwt) => this.showSuccesToast(jwt),
         err => this.handleError(err));
   }
-
   private showSuccesToast(jwt) {
     if (jwt !== 'EXISTS') {
       const toast = this.toastCtrl.create({
@@ -52,7 +51,6 @@ export class SignupPage {
       });
 
       toast.present();
-
       this.usernameModel.control.setErrors({'usernameTaken': true});
     }
   }

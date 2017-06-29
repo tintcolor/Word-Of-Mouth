@@ -7,6 +7,8 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { AuthService } from "../providers/auth-service/auth-service";
+import { CreateprofilePage } from "../pages/createprofile/createprofile"
+
 
 @Component({
   templateUrl: 'app.html'
@@ -18,14 +20,21 @@ export class MyApp {
 
   pages: Array<{ title: string, component: any }>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private readonly authService: AuthService) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,
+    private readonly authService: AuthService) {
     platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();
     });
 
     this.authService.authUser.subscribe(jwt => {
-      if (jwt) {
+
+      if (jwt && authService.isNewAccount == true) {
+
+        //This is where it goes to the page after authentication
+        authService.isNewAccount = false;
+        this.rootPage = CreateprofilePage;
+      } else if (jwt) {
         this.rootPage = HomePage;
       }
       else {

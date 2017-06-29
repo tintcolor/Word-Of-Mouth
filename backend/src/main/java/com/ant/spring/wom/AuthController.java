@@ -6,6 +6,7 @@ import javax.validation.Valid;
 
 import com.ant.spring.wom.domain.User;
 import com.ant.spring.wom.domain.UserService;
+import com.ant.spring.wom.repository.UserRepository;
 import com.ant.spring.wom.security.TokenProvider;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -33,6 +34,9 @@ public class AuthController {
     private final PasswordEncoder passwordEncoder;
 
     private final AuthenticationManager authenticationManager;
+
+    @Inject
+    private UserRepository userRepository;
 
 
 
@@ -85,7 +89,11 @@ public class AuthController {
         }
 
         signupUser.encodePassword(this.passwordEncoder);
-        this.userService.save(signupUser);
+        this.userService.save(signupUser);// save to database
+        this.userRepository.save(signupUser);//saves to repo
+
+
+
         return this.tokenProvider.createToken(signupUser.getUsername());
     }
 

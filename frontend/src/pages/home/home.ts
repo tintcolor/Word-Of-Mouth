@@ -51,7 +51,8 @@ export class HomePage {
         
         this.displayPage(data);
         this.userID = data.json().userID;
-        console.log(this.userID);
+        // console.log(this.userID);
+        console.log(data);
       },//this.message = data.text() 
       err => console.log(err)
     );

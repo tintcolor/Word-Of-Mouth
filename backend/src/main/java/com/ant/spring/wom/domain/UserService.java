@@ -6,9 +6,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -35,6 +35,15 @@ public class UserService {
         return this.database.get(username);
     }
 
+
+    public List displayAll() {
+       Collections.singleton(database);
+       Arrays.asList(database);
+        return  Arrays.asList(database);
+    }
+
+
+
     public void initDatabase() {
 
 //        userRepository.findByUsername("mickey@disney.com").setPassword(this.passwordEncoder.encode("admin"));//.setPassword(passwordEncoder.encode(userRepository.findByUsername("mickey@disney.com").getPassword()));
@@ -44,16 +53,26 @@ public class UserService {
 //                        .setPassword(passwordEncoder.encode(userRepository.findByUsername(username).getPassword())));
 //        database.keySet().iterator().
 //                forEachRemaining(username -> System.out.println(username));
+
+//        System.out.println(database.size());
+
+
 //        System.out.println("Asdf");
 //        System.out.println(userRepository.findByUsername("mickey").getUsername());
         userRepository.findAll().forEach(item -> database.put(item.getUsername(), item));
-        database.get("mickey").setPassword(passwordEncoder.encode(userRepository.findByUsername("mickey").getPassword()));
-        database.get("leo").setPassword(passwordEncoder.encode(userRepository.findByUsername("leo").getPassword()));
+//        database.get("mickey").setPassword(passwordEncoder.encode(userRepository.findByUsername("mickey").getPassword()));
+//        database.get("leo").setPassword(passwordEncoder.encode(userRepository.findByUsername("leo").getPassword()));
 
     }
 
     public void save(User user) {
+
         this.database.put(user.getUsername(), user);
+    }
+
+    public void put(User user) {
+
+        this.database.putIfAbsent(user.getUsername(), user);
     }
 
     public boolean usernameExists(String username) {

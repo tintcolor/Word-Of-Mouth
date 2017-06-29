@@ -15,8 +15,8 @@ PHOTO VARCHAR2(255) DEFAULT NULL);
 
 
 
-insert into users (username, password, name, first_name,  main_job, side_job, email, rating, photo) values( 'mickey', 'cheese','Mickey Mouse', 'Mickey','Sound Mixer','Editor','soma@as.com',3,'http://img.img.com');
-insert into users (username, password, name, first_name,  main_job, side_job, email, rating, photo) values( 'leo', 'cheese','Mickey Mouse', 'Mickey','Sound Mixer','jhthjt','soma@as.com',3,'http://img.img.com');
+-- insert into users (username, password, name, first_name,  main_job, side_job, email, rating, photo) values( 'mickey', 'cheese','Mickey Mouse', 'Mickey','Sound Mixer','Editor','soma@as.com',3,'http://img.img.com');
+-- insert into users (username, password, name, first_name,  main_job, side_job, email, rating, photo) values( 'James', 'cheese','James Cameron', 'James','Director','Being Awesome','titanic@imawesome.com',5,'http://img.img.com');
 -- insert into users (username, password, first_name, last_name, main_job, side_job, rating, photo) values( 'minnie@disney.com', '$2a$10$kSqU.ek5pDRMMK21tHJlceS1xOc9Kna4F0DD2ZwQH/LAzH0ML0p6.', 'Minnie','Mouse','Editor','VideoGirl',5,'http://img.minnie.com');
 -- insert into users (username, password, first_name, last_name, main_job, side_job, rating, photo) values( 'leo@disney.com', '$2a$10$kSqU.ek5pDRMMK21tHJlceS1xOc9Kna4F0DD2ZwQH/LAzH0ML0p6.', 'Minnie','Mouse','Editor','LLALLA',5,'http://img.ASDF.com');
 -- insert into users (username, password, first_name, last_name, main_job, side_job, rating, photo) values( 'admin', 'admin', 'Admin','Admin','Admin','LLALLA',5,'http://img.ASDF.com');

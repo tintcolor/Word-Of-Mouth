@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+    Create Profile
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="logout()">
+        <ion-icon name="exit"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form #form="ngForm" (ngSubmit)="complete(form.value)" novalidate>
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Main Job</ion-label>
+        <ion-input type="text" name="mainJob" ngModel required #name="ngModel"></ion-input>
+       </ion-item>
+
+         <ion-item>
+        <ion-label floating>Side Job</ion-label>
+        <ion-input type="text" name="sideJob" ngModel required #name="ngModel"></ion-input>
+       </ion-item>
+
+     <ion-item>
+        <ion-label floating>Photo</ion-label>
+        <ion-input type="text" name="photo" ngModel required #name="ngModel"></ion-input>
+       </ion-item>
+       
+
+      <div padding>
+        <button ion-button color="primary" block type="submit" [disabled]="!form.valid">Complete Profile</button>
+      </div>
+
+    </ion-list>
+  </form>
+</ion-content>

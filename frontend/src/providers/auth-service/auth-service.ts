@@ -5,11 +5,19 @@ import { ReplaySubject, Observable } from "rxjs";
 import { Storage } from "@ionic/storage";
 import { JwtHelper, AuthHttp } from "angular2-jwt";
 // import {SERVER_URL} from "../../../config";
+import { NavController } from 'ionic-angular';
+import { CreateprofilePage } from "../../pages/createprofile/createprofile"
+import { SignupPage } from "../../pages/signup/signup"
+
 
 @Injectable()
 export class AuthService {
 
   authUser = new ReplaySubject<any>(1);
+  isNewAccount: boolean = true;
+  newAccountInfo: any;
+
+
 
   constructor(private readonly http: Http,
     private readonly authHttp: AuthHttp,
@@ -48,7 +56,10 @@ export class AuthService {
       .map(response => response.text())
       .map(jwt => {
         if (jwt !== 'EXISTS') {
-          console.log(values);
+          this.newAccountInfo = values;
+          // this.http.post(`http://localhost:8080/createuser`, values)
+          //You call handleJwtResponse to then set the new rootpage
+          this.isNewAccount = true;
           return this.handleJwtResponse(jwt);
         }
         else {
@@ -59,7 +70,8 @@ export class AuthService {
 
   private handleJwtResponse(jwt: string) {
     return this.storage.set('jwt', jwt)
-      .then(() => this.authUser.next(jwt))
+      .then(() => 
+        this.authUser.next(jwt))
       .then(() => jwt);
   }
 

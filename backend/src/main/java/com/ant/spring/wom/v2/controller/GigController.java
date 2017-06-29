@@ -31,14 +31,6 @@ public class GigController {
     @RequestMapping(value = "/postgig", method = RequestMethod.POST)
     @CrossOrigin
     public ResponseEntity<Void> createGig(@Valid @RequestBody Gigs newPostGig) {
-
-//        System.out.println(newPostGig.getDate());
-//        System.out.println(newPostGig.getDescription());
-//        System.out.println(newPostGig.getLocation());
-//        System.out.println(newPostGig.getRate());
-//        System.out.println(newPostGig.getSeeking());
-//        System.out.println(newPostGig.getUserid());
-
         gigRepository.save(newPostGig);
 
         return new ResponseEntity<>(HttpStatus.CREATED);

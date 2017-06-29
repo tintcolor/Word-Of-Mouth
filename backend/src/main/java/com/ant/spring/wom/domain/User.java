@@ -39,7 +39,7 @@ public class User {
     private String sideJob;
 
     @Column(name = "RATING")
-    private Integer rating;
+    private int rating;
 
     @Column(name = "PHOTO")
     private String photo;
