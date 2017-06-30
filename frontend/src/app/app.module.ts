@@ -22,7 +22,7 @@ import { CreateprofilePage } from "../pages/createprofile/createprofile"
 
 
 
-
+import { HomeService } from "../pages/home/homeService"
 import { AuthService } from "../providers/auth-service/auth-service";
 
 
@@ -76,10 +76,11 @@ const routes: Routes = [
     // RegisterPage
   ],
   providers: [
-   StatusBar,
+    StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     AuthService,
+    HomeService,
     JwtHelper, {
       provide: AuthHttp,
       useFactory: authHttpServiceFactory,

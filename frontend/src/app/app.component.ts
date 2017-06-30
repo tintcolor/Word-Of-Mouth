@@ -33,7 +33,7 @@ export class MyApp {
 
         //This is where it goes to the page after authentication
         authService.isNewAccount = false;
-        this.rootPage = CreateprofilePage;
+        this.rootPage = LoginPage; //CreateprofilePage
       } else if (jwt) {
         this.rootPage = HomePage;
       }

@@ -12,21 +12,21 @@ import { PostgigPage } from "../../pages/postgig/postgig"
 })
 export class HomePage {
   user: string;
-  userID:any;
+  userID: any;
   username: string;
-  pageData:any;
-  name:any;
-  email:any;
-  firstName:any;
-  lastName:any;
-  mainJob:any;
-  rating:any;
-  photo:any;
+  pageData: any;
+  name: any;
+  email: any;
+  firstName: any;
+  lastName: any;
+  mainJob: any;
+  rating: any;
+  photo: any;
 
   constructor(private readonly authService: AuthService,
     private readonly jwtHelper: JwtHelper,
     private readonly authHttp: AuthHttp,
-    private navCtrl: NavController,public navParam:NavParams) {
+    private navCtrl: NavController, public navParam: NavParams) {
 
     this.authService.authUser.subscribe(jwt => {
       if (jwt) {
@@ -48,7 +48,7 @@ export class HomePage {
     this.authHttp.get(`http://localhost:8080/user`).subscribe(
       data => {
         // console.log(data.json())
-        
+
         this.displayPage(data);
         this.userID = data.json().userID;
         // console.log(this.userID);
@@ -74,16 +74,18 @@ export class HomePage {
   }
 
   showGigs() {
-    this.navCtrl.push(GigsPage,this.userID);
+    this.navCtrl.push(GigsPage, {id:this.userID, mainPosition:this.mainJob});
     console.log("asdfads");
   }
 
   createGig() {
-    this.navCtrl.push(PostgigPage,this.userID);
+    this.navCtrl.push(PostgigPage, this.userID);
 
   }
 
-
+  sendMainJob(){
+  return this.mainJob;
+  }
 
 
 

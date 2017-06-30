@@ -15,7 +15,8 @@ PHOTO VARCHAR2(255) DEFAULT NULL);
 
 
 
--- insert into users (username, password, name, first_name,  main_job, side_job, email, rating, photo) values( 'mickey', 'cheese','Mickey Mouse', 'Mickey','Sound Mixer','Editor','soma@as.com',3,'http://img.img.com');
+insert into users (username, password, name, first_name,  main_job, side_job, email, rating, photo) values( 'mickey', 'cheese','Mickey Mouse', 'Mickey','Sound Mixer','Editor','soma@as.com',3,'http://img.img.com');
+insert into users (username, password, name, first_name,  main_job, side_job, email, rating, photo) values( 'minnie', 'cheese','Minnie Mouse', 'Minnie','Sound Editor','Editor','Lasdlk@as.com',4,'http://img.img.com');
 -- insert into users (username, password, name, first_name,  main_job, side_job, email, rating, photo) values( 'James', 'cheese','James Cameron', 'James','Director','Being Awesome','titanic@imawesome.com',5,'http://img.img.com');
 -- insert into users (username, password, first_name, last_name, main_job, side_job, rating, photo) values( 'minnie@disney.com', '$2a$10$kSqU.ek5pDRMMK21tHJlceS1xOc9Kna4F0DD2ZwQH/LAzH0ML0p6.', 'Minnie','Mouse','Editor','VideoGirl',5,'http://img.minnie.com');
 -- insert into users (username, password, first_name, last_name, main_job, side_job, rating, photo) values( 'leo@disney.com', '$2a$10$kSqU.ek5pDRMMK21tHJlceS1xOc9Kna4F0DD2ZwQH/LAzH0ML0p6.', 'Minnie','Mouse','Editor','LLALLA',5,'http://img.ASDF.com');
@@ -40,9 +41,9 @@ LOCATION VARCHAR2(255) DEFAULT NULL,
 DATE VARCHAR2(255) DEFAULT NULL,
 USERID NUMBER(10,0) NOT NULL);
 
+insert into gigs (seeking, description, rate, location, date, userid) values('soundmixer', 'Looking for a great Sound mixer to work on my project', '$150/day','NYC','2017-12-17', 1);
 -- insert into gigs (seeking, description, rate, location, date, userid) values('Sound mixer', 'Looking for a great Sound mixer to work on my project', '$150/day','NYC','2017-12-17', 1);
--- insert into gigs (seeking, description, rate, location, date, userid) values('Sound mixer', 'Looking for a great Sound mixer to work on my project', '$150/day','NYC','2017-12-17', 1);
--- insert into gigs (seeking, description, rate, location, date, userid) values('Sound editor', 'Work for me!', '$340/day','LA','2017-12-17', 2);
+insert into gigs (seeking, description, rate, location, date, userid) values('soundeditor', 'Work for me!', '$340/day','LA','2017-12-17', 2);
 -- insert into gigs (seeking, description, rate, location, date, userid) values('Sound editor', 'Work for me!', '$340/day','LA','2017-12-17', 3);
 
 

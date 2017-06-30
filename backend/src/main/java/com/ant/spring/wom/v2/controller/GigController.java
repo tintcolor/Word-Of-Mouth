@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by anthonyjones on 6/25/17.
@@ -36,6 +38,28 @@ public class GigController {
         return new ResponseEntity<>(HttpStatus.CREATED);
 
     }
+
+    @RequestMapping(value = "mygigs/{mainJob}", method = RequestMethod.GET)
+    @CrossOrigin
+    public ResponseEntity<?> getMyGigs(@PathVariable String mainJob) {
+
+        ArrayList arrayListOfGigs = new ArrayList<>();
+
+        String mainJobFormatted = Arrays.toString(mainJob.trim()
+                .toLowerCase()
+                .split(" "))
+                .substring(1)
+                .replaceFirst("]", "")
+                .replace(", ", "");
+
+        for (int i = 0; i < gigRepository.count()-1; i++) {
+            arrayListOfGigs.add(gigRepository.findBySeeking(mainJobFormatted));
+        }
+
+        return new ResponseEntity<>(arrayListOfGigs, HttpStatus.OK);
+    }
+
+
 //
 //    @RequestMapping(value = "/postgig/", method = RequestMethod.PUT)
 //    @CrossOrigin

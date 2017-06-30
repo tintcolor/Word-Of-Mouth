@@ -34,7 +34,7 @@ public class UserController {
         userService.displayAll();
 //        Iterable<User> asd =
 //        System.out.println(allUsers);
-        System.out.println(userService.displayAll());
+//        System.out.println(userService.displayAll());
         return new ResponseEntity<>(allUsers, HttpStatus.OK);
     }
 
@@ -45,11 +45,11 @@ public class UserController {
 
         Iterable<User> allUsers = userRepository.findAll();
 //        Iterable<User> asd =
-        System.out.println(allUsers);
+//        System.out.println(allUsers);
 
         SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String user = principal.getName();
-        System.out.println(user);
+//        System.out.println(user);
         User currentUser = userRepository.findOne(userRepository.findByUsername(user).getUserID());
         if (currentUser == null) {
             return null;
@@ -78,7 +78,7 @@ public class UserController {
 //        System.out.println(newUser.getMainJob());
         userService.put(newUser);
 //        userRepository.save(newUser);
-        System.out.println(newUser.getMainJob());
+//        System.out.println(newUser.getMainJob());
         userService.displayAll();
         System.out.println(userService.lookup(newUser.getUsername()).getMainJob() + " STRING HERE");
 

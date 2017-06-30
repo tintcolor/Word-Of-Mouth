@@ -1,11 +1,25 @@
-// import { Injectable } from '@angular/core';
-// import { Http, Headers } from '@angular/http';
-// import 'rxjs/add/operator/map';
+import { Injectable } from '@angular/core';
+import { Http, Headers } from '@angular/http';
+import 'rxjs/add/operator/map';
+import { HomePage } from "../home/home"
 
-// let apiUrl = 'http://localhost:8080/v2/user';
+@Injectable()
+export class HomeService {
+    mainJob:any;
+    constructor() { 
+    //    this.mainJob= homePage.sendMainJob;
+    }
 
-// @Injectable()
-// export class HomeService {
+
+
+
+
+}
+
+
+
+
+
 
 //   constructor(public http: Http) {}
 

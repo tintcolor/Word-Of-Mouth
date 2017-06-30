@@ -43,7 +43,7 @@ public class UserService {
     }
 
 
-
+//USE THIS TO INITIATE ADDING TEMP MEMBERS TO APP
     public void initDatabase() {
 
 //        userRepository.findByUsername("mickey@disney.com").setPassword(this.passwordEncoder.encode("admin"));//.setPassword(passwordEncoder.encode(userRepository.findByUsername("mickey@disney.com").getPassword()));
@@ -60,8 +60,8 @@ public class UserService {
 //        System.out.println("Asdf");
 //        System.out.println(userRepository.findByUsername("mickey").getUsername());
         userRepository.findAll().forEach(item -> database.put(item.getUsername(), item));
-//        database.get("mickey").setPassword(passwordEncoder.encode(userRepository.findByUsername("mickey").getPassword()));
-//        database.get("leo").setPassword(passwordEncoder.encode(userRepository.findByUsername("leo").getPassword()));
+        database.get("mickey").setPassword(passwordEncoder.encode(userRepository.findByUsername("mickey").getPassword()));
+        database.get("minnie").setPassword(passwordEncoder.encode(userRepository.findByUsername("minnie").getPassword()));
 
     }
 

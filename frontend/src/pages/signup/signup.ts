@@ -3,11 +3,14 @@ import {LoadingController, ToastController} from 'ionic-angular';
 import {NgModel} from "@angular/forms";
 import {AuthService} from "../../providers/auth-service/auth-service";
 
+
 @Component({
   selector: 'page-signup',
   templateUrl: 'signup.html'
 })
 export class SignupPage {
+
+
 
   @ViewChild('username')
   usernameModel: NgModel;
