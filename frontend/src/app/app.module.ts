@@ -19,6 +19,10 @@ import { SignupPage } from "../pages/signup/signup";
 import { GigsPage } from "../pages/gigs/gigs"
 import { PostgigPage } from "../pages/postgig/postgig"
 import { CreateprofilePage } from "../pages/createprofile/createprofile"
+import { ViewOneGigPage } from "../pages/view-one-gig/view-one-gig"
+import { ColleagueListPage } from "../pages/colleague-list/colleague-list"
+
+
 
 
 
@@ -49,7 +53,9 @@ const routes: Routes = [
     SignupPage,
     GigsPage,
     PostgigPage,
-    CreateprofilePage
+    CreateprofilePage,
+    ColleagueListPage,
+    ViewOneGigPage
     // RegisterPage
   ],
   imports: [
@@ -72,7 +78,9 @@ const routes: Routes = [
     SignupPage,
     GigsPage,
     PostgigPage,
-    CreateprofilePage
+    ViewOneGigPage,
+    CreateprofilePage,
+    ColleagueListPage
     // RegisterPage
   ],
   providers: [

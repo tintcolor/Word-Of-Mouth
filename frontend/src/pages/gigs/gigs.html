@@ -15,7 +15,7 @@
 
 <ion-content padding>
 <ion-list>
-    <button ion-item *ngFor="let job of jobs" >
+    <button ion-item *ngFor="let job of jobs" (click)="itemTapped($event, job)">
       {{job.seeking}}
         {{job.rate}}
      

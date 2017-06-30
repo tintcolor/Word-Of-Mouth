@@ -38,7 +38,7 @@ SEEKING VARCHAR2(255) DEFAULT NULL,
 DESCRIPTION VARCHAR2(255) DEFAULT NULL,
 RATE VARCHAR2(255) DEFAULT NULL,
 LOCATION VARCHAR2(255) DEFAULT NULL,
-DATE VARCHAR2(255) DEFAULT NULL,
+date DATE NOT NULL,
 USERID NUMBER(10,0) NOT NULL);
 
 insert into gigs (seeking, description, rate, location, date, userid) values('soundmixer', 'Looking for a great Sound mixer to work on my project', '$150/day','NYC','2017-12-17', 1);

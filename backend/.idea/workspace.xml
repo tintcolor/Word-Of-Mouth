@@ -78,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="schema-h2.sql" pinned="false" current-in-tab="false">
+      <file leaf-file-name="schema-h2.sql" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/schema-h2.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="45" column="83" lean-forward="true" selection-start-line="45" selection-start-column="83" selection-end-line="45" selection-end-column="83" />
+            <state relative-caret-position="489">
+              <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -108,7 +108,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ant/spring/wom/v2/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="243">
@@ -180,11 +180,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/ant/spring/wom/domain/Gigs.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ant/spring/wom/AuthController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ant/spring/wom/domain/User.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/schema-h2.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/ant/spring/wom/domain/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ant/spring/wom/repository/GigRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ant/spring/wom/v2/controller/GigController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ant/spring/wom/v2/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/schema-h2.sql" />
       </list>
     </option>
   </component>
@@ -1133,7 +1133,7 @@
       <updated>1498246439410</updated>
       <workItem from="1498246441299" duration="159000" />
       <workItem from="1498247235810" duration="52220000" />
-      <workItem from="1498408389759" duration="88249000" />
+      <workItem from="1498408389759" duration="90292000" />
     </task>
     <servers />
   </component>
@@ -1167,7 +1167,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140628000" />
+    <option name="totallyTimeSpent" value="142671000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1130" height="773" extended-state="0" />
@@ -1618,14 +1618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/schema-h2.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="45" column="83" lean-forward="true" selection-start-line="45" selection-start-column="83" selection-end-line="45" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ant/spring/wom/domain/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
@@ -1661,6 +1653,14 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/schema-h2.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
