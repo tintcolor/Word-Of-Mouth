@@ -4,6 +4,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.Arrays;
 import java.util.Set;
 
 /**
@@ -48,11 +49,34 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "USERID")
     @OrderBy
-    @Size(min=2,max=6)
+    @Size(min = 2, max = 6)
     private Set<Gigs> gigPost;
 
+    @JoinColumn(name = "CONNECTIONID")
+    private String connectionid;
 
-//    @Column(name = "ADMIN", columnDefinition = "char(3)")
+    public String getConnectionid() {
+        return connectionid;
+    }
+
+    public void setConnectionid(String connectionid) {
+        this.connectionid = connectionid;
+    }
+    //    @OneToMany(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "ID")
+//    @OrderBy
+//    @Size(min=2,max=6)
+//    private Set<Connection> connectToAnotherUser;
+//
+//    public Set<Connection> getConnectToAnotherUser() {
+//        return connectToAnotherUser;
+//    }
+//
+//    public void setConnectToAnotherUser(Set<Connection> connectToAnotherUser) {
+//        this.connectToAnotherUser = connectToAnotherUser;
+//    }
+
+    //    @Column(name = "ADMIN", columnDefinition = "char(3)")
 //    @Type(type = "yes_no")
 //    @NotEmpty
 //    private boolean admin;
