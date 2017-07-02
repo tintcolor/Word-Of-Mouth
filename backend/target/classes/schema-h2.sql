@@ -38,11 +38,11 @@ SEEKING VARCHAR2(255) DEFAULT NULL,
 DESCRIPTION VARCHAR2(255) DEFAULT NULL,
 RATE VARCHAR2(255) DEFAULT NULL,
 LOCATION VARCHAR2(255) DEFAULT NULL,
-date DATE DEFAULT NULL,
+date DATE NOT NULL,
 USERID NUMBER(10,0) NOT NULL);
 
 insert into gigs (seeking, description, rate, location, date, userid) values('soundmixer', 'Looking for a great Sound mixer to work on my project', '$150/day','NYC','2017-12-17', 1);
--- insert into gigs (seeking, description, rate, location, date, userid) values('Sound mixer', 'Looking for a great Sound mixer to work on my project', '$150/day','NYC','2017-12-17', 1);
+insert into gigs (seeking, description, rate, location, date, userid) values('Editor', 'Looking for editor to help me on my Thesis Film project', '$150/day','NYC','2017-12-17', 1);
 insert into gigs (seeking, description, rate, location, date, userid) values('soundeditor', 'Work for me!', '$340/day','LA','2017-12-17', 2);
 -- insert into gigs (seeking, description, rate, location, date, userid) values('Sound editor', 'Work for me!', '$340/day','LA','2017-12-17', 3);
 
