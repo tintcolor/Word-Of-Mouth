@@ -1,14 +1,14 @@
 webpackJsonp([2],{
 
-/***/ 734:
+/***/ 735:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__view_one_gig__ = __webpack_require__(735);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ViewOneGigPageModule", function() { return ViewOneGigPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__gigs__ = __webpack_require__(160);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GigsPageModule", function() { return GigsPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,26 +18,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ViewOneGigPageModule = (function () {
-    function ViewOneGigPageModule() {
+var GigsPageModule = (function () {
+    function GigsPageModule() {
     }
-    return ViewOneGigPageModule;
+    return GigsPageModule;
 }());
-ViewOneGigPageModule = __decorate([
+GigsPageModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__view_one_gig__["a" /* ViewOneGigPage */],
+            __WEBPACK_IMPORTED_MODULE_2__gigs__["a" /* GigsPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__view_one_gig__["a" /* ViewOneGigPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__gigs__["a" /* GigsPage */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__view_one_gig__["a" /* ViewOneGigPage */]
+            __WEBPACK_IMPORTED_MODULE_2__gigs__["a" /* GigsPage */]
         ]
     })
-], ViewOneGigPageModule);
+], GigsPageModule);
 
-//# sourceMappingURL=view-one-gig.module.js.map
+//# sourceMappingURL=gigs.module.js.map
 
 /***/ })
 

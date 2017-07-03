@@ -27,12 +27,6 @@ export class GigsPage {
     this.mainJob = this.navParams.get("mainPosition");
   }
 
-
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad GigsPage');
-  }
-
   ionViewWillEnter() {
     this.authHttp.get(`http://localhost:8080/mygigs/` + this.mainJob).map((data) => data.json())
       .subscribe(

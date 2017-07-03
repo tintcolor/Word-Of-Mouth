@@ -24,7 +24,10 @@ INSERT INTO users (username, password, name, first_name, main_job, side_job, ema
 INSERT INTO users (username, password, name, first_name, main_job, side_job, email, rating, photo, connectorid) VALUES
   ('James', 'cheese', 'James Cameron', 'James', 'Director', 'Being Awesome', 'titanic@imawesome.com', 5,
    'http://img.img.com', 3);
--- insert into users (username, password, first_name, last_name, main_job, side_job, rating, photo) values( 'minnie@disney.com', '$2a$10$kSqU.ek5pDRMMK21tHJlceS1xOc9Kna4F0DD2ZwQH/LAzH0ML0p6.', 'Minnie','Mouse','Editor','VideoGirl',5,'http://img.minnie.com');
+
+INSERT INTO users (username, password, name, first_name, main_job, side_job, email, rating, photo, connectorid) VALUES
+  ('Daffy', 'cheese', 'Daffy Duck ', 'Daffy', 'Sound Mixer', 'Boom Operator', 'Lasdlk@as.com', 4, 'http://img.img.com', 2);
+
 -- insert into users (username, password, first_name, last_name, main_job, side_job, rating, photo) values( 'leo@disney.com', '$2a$10$kSqU.ek5pDRMMK21tHJlceS1xOc9Kna4F0DD2ZwQH/LAzH0ML0p6.', 'Minnie','Mouse','Editor','LLALLA',5,'http://img.ASDF.com');
 -- insert into users (username, password, first_name, last_name, main_job, side_job, rating, photo) values( 'admin', 'admin', 'Admin','Admin','Admin','LLALLA',5,'http://img.ASDF.com');
 -- insert into users (user_id, username, password, first_name, last_name, admin) values(2, 'minnie', '$2a$10$MnHcLn.XdLx.iMntXsmdgeO1B4wAW1E5GOy/VrLUmr4aAzabXnGFq', 'Minnie','Mouse', 'no');
@@ -54,7 +57,7 @@ VALUES ('soundeditor', 'Work for me!', '$340/day', 'LA', '2017-12-17', 2);
 
 
 CREATE TABLE CONNECTION (
-  ID     NUMBER(10, 0)  NOT NULL AUTO_INCREMENT,
+  ID      NUMBER(10, 0) NOT NULL AUTO_INCREMENT,
   USERID1 NUMBER(10, 0) NOT NULL,
   USERID2 NUMBER(10, 0) NOT NULL,
   --   FOREIGN KEY (CONNECTORID) REFERENCES USERS(CONNECTORID)
@@ -66,6 +69,7 @@ INSERT INTO connection (userid1, userid2) VALUES (1, 2);
 INSERT INTO connection (userid1, userid2) VALUES (1, 3);
 INSERT INTO connection (userid1, userid2) VALUES (2, 3);
 INSERT INTO connection (userid1, userid2) VALUES (2, 1);
+INSERT INTO connection (userid1, userid2) VALUES (1, 4);
 -- INSERT INTO connection (userid1, userid2) VALUES (3, 2);
 -- INSERT INTO connection (userid1, userid2) VALUES (3, 1);
 
