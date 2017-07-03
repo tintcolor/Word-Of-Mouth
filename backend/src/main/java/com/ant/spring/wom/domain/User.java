@@ -4,6 +4,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -50,6 +51,41 @@ public class User {
     @OrderBy
     @Size(min=2,max=6)
     private Set<Gigs> gigPost;
+
+    @Column(name = "CONNECTORID")
+    private Long connectorID;
+
+    public Long getConnectorID() {
+        return connectorID;
+    }
+
+    public void setConnectorID(Long connectorID) {
+        this.connectorID = connectorID;
+    }
+
+//    @ManyToMany(cascade = { CascadeType.ALL })
+////    @JoinTable(name = "CONNECTION", joinColumns = { @JoinColumn(name = "USERID") },
+////            inverseJoinColumns = { @JoinColumn(name = "CONNECTORID") })
+//    private Set<User> friends = new HashSet<>();//THIS CREATES THE MAPPED BY REFERENCE!
+
+    public User() {
+        super();
+    }
+
+    public User(String username) {
+        super();
+        this.username = username;
+    }
+
+//    public Set<User> getFriends() {
+//        return friends;
+//    }
+//
+//    public void setFriends(Set<User> friends) {
+//        this.friends = friends;
+//    }
+
+
 
 
 //    @Column(name = "ADMIN", columnDefinition = "char(3)")

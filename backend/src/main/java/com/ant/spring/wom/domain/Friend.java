@@ -1,54 +1,59 @@
 //package com.ant.spring.wom.domain;
 //
 //import javax.persistence.*;
+//import java.util.HashSet;
 //import java.util.Set;
 //
 ///**
 // * Created by anthonyjones on 7/2/17.
 // */
 //@Entity
-//@Table(name="FRIEND")
+////@Table(name="FRIEND")
 //public class Friend {
 //
-//    private long friendId;
-//    private String friendName;
-//    private Set<User> user;
-//
-//    public Friend(String name){
-//        this.friendName = name;
-//    }
-//
-//    public Friend(String name, Set<User> users){
-//        this.friendName = name;
-//        this.user = users;
-//    }
-//
-//    @ManyToMany(mappedBy = "friends")
-//    public Set<User> getUsers() {
-//        return user;
-//    }
-//
-//    public void setUsers(Set<User> users) {
-//        this.user = users;
-//    }
+//    private static final long serialVersionUID = 1L;
 //
 //    @Id
 //    @GeneratedValue
-//    @Column(name="FRIEND_ID")
-//    public long getFriendId() {
-//        return this.friendId;
+//    @Column(name = "FRIENDID")
+//    private long friendID;
+//
+//    @Column(name = "FRIENDNAME")
+//    private String friendName;
+//
+//    @ManyToMany(mappedBy="friends")//THIS LOOKS FOR THE MAPPED BY REFERENCE
+//    private Set<User> users = new HashSet<User>();
+//
+//    public Friend() {
+//        super();
 //    }
 //
-//    public void setFriendId(long friendId) {
-//        this.friendId = friendId;
+//    public Friend(String friendName) {
+//        this.friendName = friendName;
 //    }
 //
-//    @Column(name="FRIEND_NAME", nullable=false)
+//
+//    public long getFriendID() {
+//        return friendID;
+//    }
+//
+//    public void setFriendID(long friendID) {
+//        this.friendID = friendID;
+//    }
+//
 //    public String getFriendName() {
-//        return this.friendName;
+//        return friendName;
 //    }
 //
 //    public void setFriendName(String friendName) {
 //        this.friendName = friendName;
+//    }
+//
+//    public Set<User> getUsers() {
+//        return users;
+//    }
+//
+//    public void setUsers(Set<User> users) {
+//        this.users = users;
 //    }
 //}

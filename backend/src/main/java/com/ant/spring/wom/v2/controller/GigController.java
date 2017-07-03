@@ -32,10 +32,10 @@ public class GigController {
 
     @RequestMapping(value = "/postgig", method = RequestMethod.POST)
     @CrossOrigin
-    public ResponseEntity<Void> createGig(@Valid @RequestBody Gigs newPostGig) {
+    public ResponseEntity<?> createGig(@Valid @RequestBody Gigs newPostGig) {
         gigRepository.save(newPostGig);
 
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        return new ResponseEntity<>(newPostGig,HttpStatus.CREATED);
 
     }
 
