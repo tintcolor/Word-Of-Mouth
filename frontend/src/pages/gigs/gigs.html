@@ -7,19 +7,23 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>GIGS</ion-title>
+    <ion-title>Gigs looking for someone with your skills</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-<ion-list>
+  <ion-list>
+
     <button ion-item *ngFor="let job of jobs" (click)="itemTapped($event, job)">
-      {{job.seeking}}
-        {{job.rate}}
+      <span *ngIf="job?.seeking ==null">There aren't any job postings for you at the moment, please check back later</span>
+       <span *ngIf="job?.seeking !=null">{{job.seeking}}</span> 
+     
+        <span *ngIf="job?.seeking !=rate">{{job.rate}} </span>
      
     </button>
+
   </ion-list>
 
 

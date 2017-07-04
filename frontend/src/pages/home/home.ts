@@ -5,6 +5,8 @@ import { JwtHelper, AuthHttp } from "angular2-jwt";
 import { AuthService } from "../../providers/auth-service/auth-service";
 import { GigsPage } from "../../pages/gigs/gigs"
 import { PostgigPage } from "../../pages/postgig/postgig"
+import { ViewOneGigPage } from "../view-one-gig/view-one-gig"
+
 
 @Component({
   selector: 'page-home',
@@ -22,6 +24,8 @@ export class HomePage {
   mainJob: any;
   rating: any;
   photo: any;
+  postedGigs: Array<any>;
+  isAllGigs: boolean;
 
   constructor(private readonly authService: AuthService,
     private readonly jwtHelper: JwtHelper,
@@ -66,6 +70,8 @@ export class HomePage {
     this.firstName = info.json().firstName;
     this.name = info.json().name;
     this.mainJob = info.json().mainJob;
+    this.photo = info.json().photo;
+    this.postedGigs = info.json().gigPost;
     // console.log(info);
   }
 
@@ -73,18 +79,34 @@ export class HomePage {
     this.authService.logout();
   }
 
-  showGigs() {
-    this.navCtrl.push(GigsPage, {id:this.userID, mainPosition:this.mainJob});
-    console.log("asdfads");
-  }
+
 
   createGig() {
     this.navCtrl.push(PostgigPage, this.userID);
 
   }
 
-  sendMainJob(){
-  return this.mainJob;
+  sendMainJob() {
+    return this.mainJob;
+  }
+
+  itemTapped(event, job) {
+    // That's right, we're pushing to ourselves!
+    this.navCtrl.push(ViewOneGigPage, {
+      item: job
+    });
+  }
+
+  showGigs() {
+    this.isAllGigs = false;
+    this.navCtrl.push(GigsPage, { id: this.userID, mainPosition: this.mainJob, isAllGigs: this.isAllGigs });
+
+  }
+
+  showAllGigs() {
+    this.isAllGigs = true;
+    this.navCtrl.push(GigsPage, { id: this.userID, mainPosition: this.mainJob, isAllGigs: this.isAllGigs });
+
   }
 
 

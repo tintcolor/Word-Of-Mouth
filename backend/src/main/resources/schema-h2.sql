@@ -18,15 +18,18 @@ CREATE TABLE USERS (
 
 INSERT INTO users (username, password, name, first_name, main_job, side_job, email, rating, photo, connectorid)
 VALUES
-  ('mickey', 'cheese', 'Mickey Mouse', 'Mickey', 'Sound Mixer', 'Editor', 'soma@as.com', 3, 'http://img.img.com', 1);
-INSERT INTO users (username, password, name, first_name, main_job, side_job, email, rating, photo, connectorid) VALUES
-  ('minnie', 'cheese', 'Minnie Mouse', 'Minnie', 'Sound Editor', 'Editor', 'Lasdlk@as.com', 4, 'http://img.img.com', 2);
-INSERT INTO users (username, password, name, first_name, main_job, side_job, email, rating, photo, connectorid) VALUES
-  ('James', 'cheese', 'James Cameron', 'James', 'Director', 'Being Awesome', 'titanic@imawesome.com', 5,
-   'http://img.img.com', 3);
+  ('mickey', 'cheese', 'Mickey Mouse', 'Mickey', 'Sound Mixer', 'Editor', 'soma@as.com', 3, '/assets/img/man1.jpg', 1);
 
 INSERT INTO users (username, password, name, first_name, main_job, side_job, email, rating, photo, connectorid) VALUES
-  ('Daffy', 'cheese', 'Daffy Duck ', 'Daffy', 'Sound Mixer', 'Boom Operator', 'Lasdlk@as.com', 4, 'http://img.img.com', 2);
+  ('minnie', 'cheese', 'Minnie Mouse', 'Minnie', 'Sound Editor', 'Editor', 'Lasdlk@as.com', 4, '/assets/img/woman1.jpg', 2);
+
+INSERT INTO users (username, password, name, first_name, main_job, side_job, email, rating, photo, connectorid) VALUES
+  ('lucy', 'cheese', 'Lucy Lawless', 'Lucy', 'Director', 'Being Awesome', 'titanic@imawesome.com', 5,
+   '/assets/img/woman2.jpg', 3);
+
+INSERT INTO users (username, password, name, first_name, main_job, side_job, email, rating, photo, connectorid) VALUES
+  ('daffy', 'cheese', 'Daffy Duck ', 'Daffy', 'Sound Mixer', 'Boom Operator', 'Lasdlk@as.com', 4, 'http://img.img.com',
+   2);
 
 -- insert into users (username, password, first_name, last_name, main_job, side_job, rating, photo) values( 'leo@disney.com', '$2a$10$kSqU.ek5pDRMMK21tHJlceS1xOc9Kna4F0DD2ZwQH/LAzH0ML0p6.', 'Minnie','Mouse','Editor','LLALLA',5,'http://img.ASDF.com');
 -- insert into users (username, password, first_name, last_name, main_job, side_job, rating, photo) values( 'admin', 'admin', 'Admin','Admin','Admin','LLALLA',5,'http://img.ASDF.com');
@@ -49,10 +52,12 @@ CREATE TABLE GIGS (
 
 INSERT INTO gigs (seeking, description, rate, location, date, userid)
 VALUES ('soundmixer', 'Looking for a great Sound mixer to work on my project', '$150/day', 'NYC', '2017-12-17', 1);
+
 INSERT INTO gigs (seeking, description, rate, location, date, userid)
 VALUES ('Editor', 'Looking for editor to help me on my Thesis Film project', '$150/day', 'NYC', '2017-12-17', 1);
-INSERT INTO gigs (seeking, description, rate, location, date, userid)
-VALUES ('soundeditor', 'Work for me!', '$340/day', 'LA', '2017-12-17', 2);
+
+-- INSERT INTO gigs (seeking, description, rate, location, date, userid)
+-- VALUES ('soundeditor', 'Work for me!', '$340/day', 'LA', '2017-12-17', 2);
 -- insert into gigs (seeking, description, rate, location, date, userid) values('Sound editor', 'Work for me!', '$340/day','LA','2017-12-17', 3);
 
 

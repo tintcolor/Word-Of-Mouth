@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .ion-ios-add:before {
   content: "\f102";
 }
@@ -24728,4 +24729,127 @@ ion-navbar.toolbar {
   .wp .modal-wrapper > .ion-page > ion-header > ion-content.statusbar-padding:first-child[padding-top] .scroll-content {
     padding-top: calc(16px + 20px);
   }
+}
+
+.ios page-home .background,
+.md page-home .background {
+  background: url("/assets/img/homepage_bg.jpg");
+  text-align: center;
+  position: relative;
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.ios page-home .overlay,
+.md page-home .overlay {
+  height: 100%;
+  background: #f4f4f4;
+  opacity: .8;
+}
+
+.ios page-home .toolbar-background,
+.md page-home .toolbar-background {
+  background: initial;
+}
+
+.ios page-home .content,
+.md page-home .content {
+  color: #000;
+  background-color: initial;
+}
+
+.ios page-home .welcome,
+.md page-home .welcome {
+  text-align: center;
+}
+
+.ios page-home .job,
+.md page-home .job {
+  text-align: center;
+}
+
+.ios page-home p .rating,
+.md page-home p .rating {
+  text-align: center;
+}
+
+.ios page-login .header,
+.md page-login .header {
+  text-align: center;
+}
+
+.ios page-login .fullscreen-bg,
+.md page-login .fullscreen-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+.ios page-login .fullscreen-bg__video,
+.md page-login .fullscreen-bg__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.ios page-login .content,
+.md page-login .content {
+  background-color: initial;
+}
+
+.ios page-login .item,
+.md page-login .item {
+  background-color: initial;
+}
+
+.ios page-login .input-wrapper .label,
+.md page-login .input-wrapper .label {
+  color: black;
+}
+
+.ios page-login .toolbar-background,
+.md page-login .toolbar-background {
+  background-color: initial;
+}
+
+.ios page-login .header-md::after,
+.ios page-login .tabs-md[tabsPlacement=“top”] > .tabbar::after,
+.ios page-login .footer-md::before,
+.ios page-login .tabs-md[tabsPlacement=“bottom”] > .tabbar::before,
+.md page-login .header-md::after,
+.md page-login .tabs-md[tabsPlacement=“top”] > .tabbar::after,
+.md page-login .footer-md::before,
+.md page-login .tabs-md[tabsPlacement=“bottom”] > .tabbar::before {
+  background-image: none;
+}
+
+.ios page-login .toolbar-title,
+.md page-login .toolbar-title {
+  color: white;
+}
+
+.ios page-login .scroll-content,
+.md page-login .scroll-content {
+  position: relative;
+  height: 500px;
+}
+
+.ios page-login form,
+.md page-login form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 93%;
+  height: 200px;
 }

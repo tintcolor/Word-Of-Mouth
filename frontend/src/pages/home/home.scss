@@ -1,3 +1,37 @@
-page-home {
-
+.ios,
+.md {
+    page-home {
+        .background {
+            background: url("/assets/img/homepage_bg.jpg");
+            text-align: center;
+            position: relative;
+            /* Full height */
+            height: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .overlay {
+            height: 100%;
+            background: rgb(244, 244, 244);
+            opacity: .8;
+        }
+        .toolbar-background {
+            background: initial;
+        }
+        .content {
+            color: #000;
+            background-color: initial;
+        }
+        .welcome {
+            text-align: center;
+        }
+        .job {
+            text-align: center;
+        }
+        p .rating{
+            text-align: center;
+        }
+    }
 }

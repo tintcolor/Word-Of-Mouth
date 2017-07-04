@@ -12,7 +12,6 @@ import java.util.Date;
 public class Gigs {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "GIGID")
     private Long gigID;
 

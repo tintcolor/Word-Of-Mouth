@@ -3,12 +3,15 @@ package com.ant.spring.wom.v2.controller;
 
 import com.ant.spring.wom.domain.Gigs;
 import com.ant.spring.wom.repository.GigRepository;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.inject.Inject;
 import javax.validation.Valid;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -33,9 +36,20 @@ public class GigController {
     @RequestMapping(value = "/postgig", method = RequestMethod.POST)
     @CrossOrigin
     public ResponseEntity<?> createGig(@Valid @RequestBody Gigs newPostGig) {
+
+        newPostGig.setGigID(gigRepository.count() + 1);
+        newPostGig = gigRepository.save(newPostGig);
         gigRepository.save(newPostGig);
 
-        return new ResponseEntity<>(newPostGig,HttpStatus.CREATED);
+        HttpHeaders responseHeaders = new HttpHeaders();
+        URI newGigUri = ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(newPostGig.getGigID())
+                .toUri();
+        responseHeaders.setLocation(newGigUri);
+
+        return new ResponseEntity<>(responseHeaders, HttpStatus.CREATED);
 
     }
 
@@ -52,12 +66,15 @@ public class GigController {
                 .replaceFirst("]", "")
                 .replace(", ", "");
 
-        for (int i = 0; i < gigRepository.count()-1; i++) {
+        for (int i = 0; i < gigRepository.count() - 1; i++) {
             arrayListOfGigs.add(gigRepository.findBySeeking(mainJobFormatted));
         }
 
         return new ResponseEntity<>(arrayListOfGigs, HttpStatus.OK);
     }
+
+
+
 
 
 //

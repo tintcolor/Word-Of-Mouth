@@ -62,6 +62,8 @@ public class UserService {
         userRepository.findAll().forEach(item -> database.put(item.getUsername(), item));
         database.get("mickey").setPassword(passwordEncoder.encode(userRepository.findByUsername("mickey").getPassword()));
         database.get("minnie").setPassword(passwordEncoder.encode(userRepository.findByUsername("minnie").getPassword()));
+        database.get("lucy").setPassword(passwordEncoder.encode(userRepository.findByUsername("lucy").getPassword()));
+        database.get("daffy").setPassword(passwordEncoder.encode(userRepository.findByUsername("daffy").getPassword()));
 
     }
 

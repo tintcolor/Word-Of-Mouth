@@ -64,12 +64,12 @@ public class ConnectionController {
         reverseFriendship(newFriend);
 
         HttpHeaders responseHeaders = new HttpHeaders();
-        URI newPollUri = ServletUriComponentsBuilder
+        URI newControllerUri = ServletUriComponentsBuilder
                 .fromCurrentRequest()
                 .path("/{id}")
                 .buildAndExpand(newFriend.getId())
                 .toUri();
-        responseHeaders.setLocation(newPollUri);
+        responseHeaders.setLocation(newControllerUri);
 //        connectionRepository.findAll().forEach(item -> System.out.println(item.getId()));
 
 

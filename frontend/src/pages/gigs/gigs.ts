@@ -19,36 +19,56 @@ export class GigsPage {
 
 
   mainJob: any;
+  isAllGigs: boolean;
   jobs: Array<any>;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public authHttp: AuthHttp,
     public homeService: HomeService) {
     this.mainJob = this.navParams.get("mainPosition");
+    this.isAllGigs = this.navParams.get("isAllGigs");
+
   }
 
   ionViewWillEnter() {
-    this.authHttp.get(`http://localhost:8080/mygigs/` + this.mainJob).map((data) => data.json())
-      .subscribe(
-      data => {
-        //console.log(data.json());
-        this.displayGigs(data);
-        this.jobs = data;
-      },//
-      err => console.log(err)
-      );
+
+    if (this.isAllGigs == true) {
+    this.authHttp.get(`http://localhost:8080/gigs/`).map((data) => data.json())
+        .subscribe(
+        data => {
+          //console.log(data.json());
+          this.displayGigs(data);
+          this.jobs = data;
+        },//
+        err => console.log(err)
+        );
+    } else {
+      this.authHttp.get(`http://localhost:8080/mygigs/` + this.mainJob).map((data) => data.json())
+        .subscribe(
+        data => {
+          //console.log(data.json());
+          this.displayGigs(data);
+          this.jobs = data;
+        },//
+        err => console.log(err)
+        );
+    }
+
+
+
 
   }
 
   itemTapped(event, job) {
     // That's right, we're pushing to ourselves!
-    this.navCtrl.push(ViewOneGigPage,  {
+    this.navCtrl.push(ViewOneGigPage, {
       item: job
     });
   }
 
 
   displayGigs(gigs) {
+    console.log(gigs);
     this.jobs = gigs;
     // for (let gig of gigs) {
     //   console.log(gig);

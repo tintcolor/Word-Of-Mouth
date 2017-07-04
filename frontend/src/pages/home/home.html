@@ -11,27 +11,37 @@
   </ion-navbar>
 </ion-header>
 
+<div class="background">
+  <div class="overlay"></div>
+</div>
+
 <ion-content padding>
-  Welcome <strong>{{firstName}}</strong>
 
-  <p>
-    <strong>Username: {{username}}</strong><br>
-    <strong>Rating: {{rating}}</strong><br>
-    <strong>Current Rating: {{rating}}</strong> <br>
-    <strong>Name: {{name}}</strong> <br>
-    <strong>Main Job: {{mainJob}}</strong> <br>
-    <button (click)="showGigs()">Click me to see gigs</button>
-  </p>
-
+  <h3 class="welcome"><strong>Welcome, {{firstName}}</strong> </h3>
+  <h2 class="job"> <strong>{{mainJob}}</strong></h2>
   <br>
-
-
+  <div class="photo_div">
+    <img [src]="photo"><br>
+    <!--<strong>Username: {{username}}</strong><br>-->
+  </div>
+  <p class="rating"><strong>Rating: {{rating}}</strong></p><br>
 
   
-    <button (click)="createGig()">Click to create a gig</button>
+  <button ion-button (click)="showGigs()">Find Work</button>
 
+  <button ion-button (click)="createGig()">Create a gig</button>
 
+  <button ion-button (click)="showAllGigs()">Show me all Work</button>
 
+  <div class="list_of_posted_gigs">
 
-    
+    <button ion-item *ngFor="let postedGig of postedGigs" (click)="itemTapped($event, postedGig)">
+    {{postedGig.seeking}}
+     
+        {{postedGig.rate}}
+     
+    </button>
+
+  </div>
+
 </ion-content>

@@ -1,8 +1,16 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Login</ion-title>
+    <ion-title>Filmed'IN</ion-title>
   </ion-navbar>
 </ion-header>
+
+<div class="fullscreen-bg">
+
+		<video class="fullscreen-bg__video" autoplay loop muted webkit-playsinline>
+			<source src="/assets/video/Yellow_Traffic.mp4" type="video/mp4; codecs='h.264'" />
+			<source src="/assets/video/Yellow_Traffic.webm" type="video/webm"/>
+		</video>
+	</div>
 
 <ion-content padding>
   <form #form="ngForm" (ngSubmit)="login(form.value)" novalidate>
