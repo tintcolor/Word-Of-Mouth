@@ -5,6 +5,8 @@ import "rxjs/add/operator/map";
 import { NgModel } from "@angular/forms";
 import { Storage } from "@ionic/storage";
 import { JwtHelper, AuthHttp } from "angular2-jwt";
+import { CompleteTestService } from './CompleteTestService';
+import { AutoCompleteComponent } from 'ionic2-auto-complete';
 
 
 
@@ -22,16 +24,21 @@ import { ReplaySubject, Observable } from "rxjs";
   templateUrl: 'postgig.html',
 })
 export class PostgigPage {
+
+  @ViewChild('searchbar')
+  searchbar: AutoCompleteComponent;
   userID: any;
   @ViewChild('username')
   usernameModel: NgModel;
   authUser = new ReplaySubject<any>(1);
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private readonly authHttp: AuthHttp,
     private readonly jwtHelper: JwtHelper,
     public http: Http,
     private readonly storage: Storage,
-    public navParam: NavParams) {
+    public navParam: NavParams,
+    public completeTestService: CompleteTestService) {
   }
 
   ionViewDidLoad() {
@@ -45,11 +52,12 @@ export class PostgigPage {
   sendJson(values: any) {
     console.log(this.userID);
     values["userid"] = this.userID;
+    values["seeking"] = this.searchbar.getValue();
 
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
-   
+console.log(this.searchbar.getValue());
     console.log(values);
     return this.http.post('http://localhost:8080/postgig', values, options)
       .map(res => res.text())
@@ -57,6 +65,8 @@ export class PostgigPage {
         //   console.log(data);
         //    console.log("data");
       });
+
+ 
   }
 
 

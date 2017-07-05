@@ -30,15 +30,6 @@ public class Gigs {
     @Column(name = "SEEKING")
     private String seeking;
 
-//    @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name="USERID")
-//    @JsonIgnore
-//    private User user;
-
-    //    @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name="USERID")
-//    @JsonIgnore
-
     @Column(name = "USERID")
     private int userid;
 
@@ -49,14 +40,6 @@ public class Gigs {
     public void setUserid(int userid) {
         this.userid = userid;
     }
-
-//    public User getUser() {
-//        return user;
-//    }
-//
-//    public void setUser(User user) {
-//        this.user = user;
-//    }
 
     public Long getGigID() {
         return gigID;

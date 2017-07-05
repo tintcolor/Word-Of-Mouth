@@ -56,7 +56,7 @@ public class GigController {
     @RequestMapping(value = "mygigs/{mainJob}", method = RequestMethod.GET)
     @CrossOrigin
     public ResponseEntity<?> getMyGigs(@PathVariable String mainJob) {
-
+        //Take userID and mainJob, compare userID with gigUserID, if same, do not add to arraylist
         ArrayList arrayListOfGigs = new ArrayList<>();
 
         String mainJobFormatted = Arrays.toString(mainJob.trim()
@@ -72,9 +72,6 @@ public class GigController {
 
         return new ResponseEntity<>(arrayListOfGigs, HttpStatus.OK);
     }
-
-
-
 
 
 //

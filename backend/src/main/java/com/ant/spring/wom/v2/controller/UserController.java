@@ -71,9 +71,9 @@ public class UserController {
         System.out.println(userService.lookup(newUser.getUsername()).getUsername() + " HERE");
         System.out.println(userService.lookup(newUser.getUsername()).getUserID() + " ID HERE");
 //        System.out.println(newUser.getUsername() + " HERE");
-//        System.out.println( userRepository.findOne(newUser.getUserID()));
-//        userRepository.save(userRepository.findOne(newUser.getUserID()));
-//        userRepository.findOne(userService.lookup(newUser.getUsername()).getUserID());
+//        System.out.println( userRepository.findOne(newUser.getGigID()));
+//        userRepository.save(userRepository.findOne(newUser.getGigID()));
+//        userRepository.findOne(userService.lookup(newUser.getUsername()).getGigID());
 //        userService.lookup(newUser.getUsername());
 //        System.out.println(newUser.getMainJob());
         userService.put(newUser);
@@ -85,7 +85,7 @@ public class UserController {
 
 //        userRepository.save(newUser);
 //        System.out.println(newUser.getUsername() + " THis??");
-//        System.out.println(newUser.getUserID()+ " HERE");
+//        System.out.println(newUser.getGigID()+ " HERE");
 //        System.out.println();
 
 

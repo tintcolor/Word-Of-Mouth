@@ -49,7 +49,7 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "USERID")
     @OrderBy
-    @Size(min=2,max=6)
+    @Size(min = 2, max = 6)
     private Set<Gigs> gigPost;
 
     @Column(name = "CONNECTORID")
@@ -77,16 +77,6 @@ public class User {
         this.username = username;
     }
 
-//    public Set<User> getFriends() {
-//        return friends;
-//    }
-//
-//    public void setFriends(Set<User> friends) {
-//        this.friends = friends;
-//    }
-
-
-
 
 //    @Column(name = "ADMIN", columnDefinition = "char(3)")
 //    @Type(type = "yes_no")
@@ -101,12 +91,6 @@ public class User {
     public void setGigPost(Set<Gigs> gigPost) {
         this.gigPost = gigPost;
     }
-
-
-//    @Column(name = "TALENTS")
-//    @NotEmpty
-//    @JsonIgnore
-//    private ArrayList<String> talents;
 
 
     public Long getUserID() {
@@ -141,22 +125,6 @@ public class User {
         this.firstName = firstName;
     }
 
-//    public boolean isAdmin() {
-//        return admin;
-//    }
-//
-//    public void setAdmin(boolean admin) {
-//        this.admin = admin;
-//    }
-
-//    public ArrayList<String> getTalents() {
-//        return talents;
-//    }
-//
-//    public void setTalents(ArrayList<String> talents) {
-//        this.talents = talents;
-//    }
-
     public String getMainJob() {
         return mainJob;
     }
@@ -180,14 +148,6 @@ public class User {
     public void setRating(int rating) {
         this.rating = rating;
     }
-
-//    public ArrayList<String> getReviews() {
-//        return reviews;
-//    }
-//
-//    public void setReviews(ArrayList<String> reviews) {
-//        this.reviews = reviews;
-//    }
 
     public String getPhoto() {
         return photo;
@@ -216,4 +176,26 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+
+//    public ArrayList<String> getReviews() {
+//        return reviews;
+//    }
+//
+//    public void setReviews(ArrayList<String> reviews) {
+//        this.reviews = reviews;
+//    }
+//
+//    public boolean isAdmin() {
+//        return admin;
+//    }
+//
+//    public void setAdmin(boolean admin) {
+//        this.admin = admin;
+//    }
+
+
+//    @Column(name = "TALENTS")
+//    @NotEmpty
+//    @JsonIgnore
+//    private ArrayList<String> talents;
 }

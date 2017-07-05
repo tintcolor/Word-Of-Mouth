@@ -33,7 +33,7 @@ export class GigsPage {
   ionViewWillEnter() {
 
     if (this.isAllGigs == true) {
-    this.authHttp.get(`http://localhost:8080/gigs/`).map((data) => data.json())
+      this.authHttp.get(`http://localhost:8080/gigs/`).map((data) => data.json())
         .subscribe(
         data => {
           //console.log(data.json());
@@ -54,12 +54,9 @@ export class GigsPage {
         );
     }
 
-
-
-
   }
 
-  itemTapped(event, job) {
+  itemTapped(event, job) { 
     // That's right, we're pushing to ourselves!
     this.navCtrl.push(ViewOneGigPage, {
       item: job
@@ -68,7 +65,7 @@ export class GigsPage {
 
 
   displayGigs(gigs) {
-    console.log(gigs);
+    console.log(this.jobs==null);
     this.jobs = gigs;
     // for (let gig of gigs) {
     //   console.log(gig);

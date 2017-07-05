@@ -9,7 +9,6 @@ import javax.persistence.*;
 public class Connection {
 
     @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private Long id;
 

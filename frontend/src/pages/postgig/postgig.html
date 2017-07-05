@@ -6,27 +6,30 @@
 
 
 <ion-content padding>
+
   <form #form="ngForm" (ngSubmit)="sendJson(form.value)" novalidate>
     <ion-list>
 
 
+      <ion-label>Seeking</ion-label>
+      <ion-auto-complete [dataProvider]="completeTestService" #searchbar></ion-auto-complete>
       <!--<ion-item>
         <ion-label floating>Seeking</ion-label>
         <ion-input type="text" name="seeking" ngModel  #name="ngModel"
                    [class.invalid]="name.errors && name.dirty"></ion-input>
       </ion-item>-->
 
-      <ion-item>
+      <!--<ion-item>
         <ion-label>Seeking</ion-label>
         <ion-select type="select" name="seeking" ngModel #seeking="ngModel">
           <ion-option value="Sound Mixer">Sound Mixer</ion-option>
           <ion-option value="Editor">Editor</ion-option>
         </ion-select>
-      </ion-item>
+      </ion-item>-->
 
       <ion-item>
         <!--<ion-label floating>Date</ion-label>-->
-        <ion-input type="date" name="date" ngModel #date="ngModel"></ion-input>
+        <ion-input type="date" name="date" ngModel required #date="ngModel"></ion-input>
       </ion-item>
 
 
@@ -44,7 +47,9 @@
 
       <ion-item>
         <ion-label floating>Location</ion-label>
-        <ion-input type="text" name="location" ngModel #location="ngModel" ></ion-input>
+        <ion-input type="text" name="location" ngModel #location="ngModel" 
+        [class.invalid]="location.errors && location.dirty"></ion-input>
+
       </ion-item>
 
 
@@ -53,7 +58,7 @@
       </ion-item>-->
 
       <div padding>
-        <button ion-button color="primary" block type="submit" [disabled]="!form.valid">Sign up</button>
+        <button ion-button color="primary" block type="submit" [disabled]="!form.valid">Post Gig</button>
       </div>
 
     </ion-list>

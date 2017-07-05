@@ -9,7 +9,7 @@ import { Http, HttpModule, RequestOptions } from "@angular/http";
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { NavController } from 'ionic-angular';
-
+import { AutoCompleteModule } from 'ionic2-auto-complete';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -28,6 +28,7 @@ import { ColleagueListPage } from "../pages/colleague-list/colleague-list"
 
 import { HomeService } from "../pages/home/homeService"
 import { AuthService } from "../providers/auth-service/auth-service";
+import { CompleteTestService } from '../pages/postgig/CompleteTestService';
 
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions, storage: Storage) {
@@ -61,6 +62,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     HttpModule,
+    AutoCompleteModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot({
       name: 'myapp',
@@ -88,6 +90,7 @@ const routes: Routes = [
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     AuthService,
+    CompleteTestService,
     HomeService,
     JwtHelper, {
       provide: AuthHttp,

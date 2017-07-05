@@ -33,11 +33,11 @@
 //    }
 //
 //
-//    public long getFriendID() {
+//    public long getUserID() {
 //        return friendID;
 //    }
 //
-//    public void setFriendID(long friendID) {
+//    public void setUserID(long friendID) {
 //        this.friendID = friendID;
 //    }
 //

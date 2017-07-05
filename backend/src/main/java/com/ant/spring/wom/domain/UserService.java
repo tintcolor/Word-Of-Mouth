@@ -37,16 +37,14 @@ public class UserService {
 
 
     public List displayAll() {
-       Collections.singleton(database);
-       Arrays.asList(database);
-        return  Arrays.asList(database);
+        Collections.singleton(database);
+        Arrays.asList(database);
+        return Arrays.asList(database);
     }
 
 
-//USE THIS TO INITIATE ADDING TEMP MEMBERS TO APP
+    //USE THIS TO INITIATE ADDING TEMP MEMBERS TO APP
     public void initDatabase() {
-
-//        userRepository.findByUsername("mickey@disney.com").setPassword(this.passwordEncoder.encode("admin"));//.setPassword(passwordEncoder.encode(userRepository.findByUsername("mickey@disney.com").getPassword()));
 
 //        database.keySet().iterator().
 //                forEachRemaining(username -> database.get(username)
@@ -54,11 +52,6 @@ public class UserService {
 //        database.keySet().iterator().
 //                forEachRemaining(username -> System.out.println(username));
 
-//        System.out.println(database.size());
-
-
-//        System.out.println("Asdf");
-//        System.out.println(userRepository.findByUsername("mickey").getUsername());
         userRepository.findAll().forEach(item -> database.put(item.getUsername(), item));
         database.get("mickey").setPassword(passwordEncoder.encode(userRepository.findByUsername("mickey").getPassword()));
         database.get("minnie").setPassword(passwordEncoder.encode(userRepository.findByUsername("minnie").getPassword()));
