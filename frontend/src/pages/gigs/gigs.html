@@ -7,24 +7,33 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Gigs looking for someone with your skills</ion-title>
+    <ion-title>All Gigs</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <ion-list>
 
-    <button ion-item *ngFor="let job of jobs" (click)="itemTapped($event, job)">
-      <span *ngIf="job?.seeking ==null">There aren't any job postings for you at the moment, please check back later</span>
-       <span *ngIf="job?.seeking !=null">{{job.seeking}}</span> 
+  <div class="gig-card-list">
+    <button *ngFor="let job of jobs" (click)="itemTapped($event, job)">
+  
+<ion-card>
+  <!--<img src="img/nin-live.png"/>-->
+  <ion-card-content>
+    <ion-card-title>
+     <span *ngIf="job?.seeking !=null">{{job.seeking}}</span>
+      </ion-card-title>
+    <p>
+        <span *ngIf="job?.seeking !=null">{{job.description}}</span>
      
         <span *ngIf="job?.seeking !=rate">{{job.rate}} </span>
-     
+    </p>
+  </ion-card-content>
+</ion-card>      
     </button>
+  </div>
 
-  </ion-list>
 
 
 

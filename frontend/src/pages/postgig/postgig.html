@@ -37,17 +37,17 @@
 
       <ion-item>
         <ion-label floating>Description</ion-label>
-        <ion-input type="text" name="description" ngModel #description="ngModel"></ion-input>
+        <ion-input type="text" name="description" ngModel required #description="ngModel"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>Rate</ion-label>
-        <ion-input type="text" name="rate" ngModel #rate="ngModel"></ion-input>
+        <ion-input type="text" name="rate" ngModel required #rate="ngModel"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>Location</ion-label>
-        <ion-input type="text" name="location" ngModel #location="ngModel" 
+        <ion-input type="text" name="location" ngModel  required #location="ngModel" 
         [class.invalid]="location.errors && location.dirty"></ion-input>
 
       </ion-item>

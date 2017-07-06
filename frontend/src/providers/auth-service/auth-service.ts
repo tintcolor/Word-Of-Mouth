@@ -8,7 +8,7 @@ import { JwtHelper, AuthHttp } from "angular2-jwt";
 import { NavController } from 'ionic-angular';
 import { CreateprofilePage } from "../../pages/createprofile/createprofile"
 import { SignupPage } from "../../pages/signup/signup"
-
+import {SERVER_URL} from "../../environment/config"
 
 @Injectable()
 export class AuthService {
@@ -29,7 +29,7 @@ export class AuthService {
     this.storage.get('jwt').then(jwt => {
 
       if (jwt && !this.jwtHelper.isTokenExpired(jwt)) {
-        this.authHttp.get(`http://localhost:8080/authenticate`)
+        this.authHttp.get(SERVER_URL+`authenticate`)
           .subscribe(() => this.authUser.next(jwt),
           (err) => this.storage.remove('jwt').then(() => this.authUser.next(null)));
         // OR
@@ -42,7 +42,7 @@ export class AuthService {
   }
 
   login(values: any): Observable<any> {
-    return this.http.post(`http://localhost:8080/login`, values)
+    return this.http.post(SERVER_URL+`login`, values)
       .map(response => response.text())
       .map(jwt => this.handleJwtResponse(jwt));
   }
@@ -52,7 +52,7 @@ export class AuthService {
   }
 
   signup(values: any): Observable<any> {
-    return this.http.post(`http://localhost:8080/signup`, values)
+    return this.http.post(SERVER_URL+`signup`, values)
       .map(response => response.text())
       .map(jwt => {
         if (jwt !== 'EXISTS') {

@@ -59,7 +59,7 @@ export class PostgigPage {
 
 console.log(this.searchbar.getValue());
     console.log(values);
-    return this.http.post('http://localhost:8080/postgig', values, options)
+    return this.http.post('http://192.168.1.158:8080/postgig', values, options)
       .map(res => res.text())
       .subscribe(data => {
         //   console.log(data);

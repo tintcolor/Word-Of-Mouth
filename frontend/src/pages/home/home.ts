@@ -3,9 +3,13 @@ import { NavController, LoadingController, ToastController, NavParams } from 'io
 import { JwtHelper, AuthHttp } from "angular2-jwt";
 // import {SERVER_URL} from "../../../config";
 import { AuthService } from "../../providers/auth-service/auth-service";
-import { GigsPage } from "../../pages/gigs/gigs"
+import { GigsPage } from "../gigs/gigs"
 import { PostgigPage } from "../../pages/postgig/postgig"
 import { ViewOneGigPage } from "../view-one-gig/view-one-gig"
+import { MyGigsPage } from '../mygigs/mygigs';
+import {SERVER_URL} from "../../environment/config"
+
+
 
 
 @Component({
@@ -49,7 +53,7 @@ export class HomePage {
   //8080/user
   //when this page is hit, it automatically loads up content
   ionViewWillEnter() {
-    this.authHttp.get(`http://localhost:8080/user`).subscribe(
+    this.authHttp.get(SERVER_URL+`user`).subscribe(
       data => {
         // console.log(data.json())
 
@@ -99,7 +103,7 @@ export class HomePage {
 
   showGigs() {
     this.isAllGigs = false;
-    this.navCtrl.push(GigsPage, { id: this.userID, mainPosition: this.mainJob, isAllGigs: this.isAllGigs });
+    this.navCtrl.push(MyGigsPage, { id: this.userID, mainPosition: this.mainJob, isAllGigs: this.isAllGigs });
 
   }
 

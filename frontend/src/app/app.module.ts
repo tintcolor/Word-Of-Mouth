@@ -21,6 +21,7 @@ import { PostgigPage } from "../pages/postgig/postgig"
 import { CreateprofilePage } from "../pages/createprofile/createprofile"
 import { ViewOneGigPage } from "../pages/view-one-gig/view-one-gig"
 import { ColleagueListPage } from "../pages/colleague-list/colleague-list"
+import { MyGigsPage } from '../pages/mygigs/mygigs';
 
 
 
@@ -56,6 +57,7 @@ const routes: Routes = [
     PostgigPage,
     CreateprofilePage,
     ColleagueListPage,
+    MyGigsPage,
     ViewOneGigPage
     // RegisterPage
   ],
@@ -82,6 +84,7 @@ const routes: Routes = [
     PostgigPage,
     ViewOneGigPage,
     CreateprofilePage,
+    MyGigsPage,
     ColleagueListPage
     // RegisterPage
   ],

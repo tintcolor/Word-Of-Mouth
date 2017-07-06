@@ -63,11 +63,6 @@ public class User {
         this.connectorID = connectorID;
     }
 
-//    @ManyToMany(cascade = { CascadeType.ALL })
-////    @JoinTable(name = "CONNECTION", joinColumns = { @JoinColumn(name = "USERID") },
-////            inverseJoinColumns = { @JoinColumn(name = "CONNECTORID") })
-//    private Set<User> friends = new HashSet<>();//THIS CREATES THE MAPPED BY REFERENCE!
-
     public User() {
         super();
     }

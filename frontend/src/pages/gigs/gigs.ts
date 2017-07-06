@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { JwtHelper, AuthHttp } from "angular2-jwt";
 import { HomeService } from "../home/homeService"
 import { ViewOneGigPage } from "../view-one-gig/view-one-gig"
+import {SERVER_URL} from "../../environment/config"
 
 /**
  * Generated class for the GigsPage page.
@@ -33,7 +34,7 @@ export class GigsPage {
   ionViewWillEnter() {
 
     if (this.isAllGigs == true) {
-      this.authHttp.get(`http://localhost:8080/gigs/`).map((data) => data.json())
+      this.authHttp.get(SERVER_URL+`gigs/`).map((data) => data.json())
         .subscribe(
         data => {
           //console.log(data.json());
@@ -43,7 +44,7 @@ export class GigsPage {
         err => console.log(err)
         );
     } else {
-      this.authHttp.get(`http://localhost:8080/mygigs/` + this.mainJob).map((data) => data.json())
+      this.authHttp.get(SERVER_URL+`mygigs/` + this.mainJob).map((data) => data.json())
         .subscribe(
         data => {
           //console.log(data.json());
