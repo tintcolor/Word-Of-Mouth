@@ -24890,6 +24890,11 @@ ion-auto-complete ul li:hover {
   height: 100%;
 }
 
+.ios page-login .overlay,
+.md page-login .overlay {
+  background-color: rgba(138, 144, 138, 0.35);
+}
+
 .ios page-login .content,
 .md page-login .content {
   background-color: initial;
@@ -24900,9 +24905,14 @@ ion-auto-complete ul li:hover {
   background-color: initial;
 }
 
+.ios page-login .input,
+.md page-login .input {
+  color: white;
+}
+
 .ios page-login .input-wrapper .label,
 .md page-login .input-wrapper .label {
-  color: black;
+  color: white;
 }
 
 .ios page-login .toolbar-background,
@@ -24952,4 +24962,8 @@ ion-auto-complete ul li:hover {
 .ios page-mygigs .mygig-card-list button,
 .md page-mygigs .mygig-card-list button {
   width: 100%;
+}
+
+page-postgig .overlay {
+  background-color: green;
 }

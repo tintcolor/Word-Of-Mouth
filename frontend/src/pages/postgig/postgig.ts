@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http, RequestOptions, Headers } from "@angular/http";
 import "rxjs/add/operator/map";
@@ -23,6 +23,8 @@ import { ReplaySubject, Observable } from "rxjs";
   selector: 'page-postgig',
   templateUrl: 'postgig.html',
 })
+
+
 export class PostgigPage {
 
   @ViewChild('searchbar')
@@ -31,6 +33,9 @@ export class PostgigPage {
   @ViewChild('username')
   usernameModel: NgModel;
   authUser = new ReplaySubject<any>(1);
+  
+  elementRef;
+  selectedIdx: number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private readonly authHttp: AuthHttp,
@@ -38,7 +43,12 @@ export class PostgigPage {
     public http: Http,
     private readonly storage: Storage,
     public navParam: NavParams,
-    public completeTestService: CompleteTestService) {
+    public completeTestService: CompleteTestService, myElement: ElementRef) {
+
+
+    this.elementRef = myElement;
+    this.selectedIdx = -1;
+
   }
 
   ionViewDidLoad() {
@@ -57,7 +67,7 @@ export class PostgigPage {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
-console.log(this.searchbar.getValue());
+    console.log(this.searchbar.getValue());
     console.log(values);
     return this.http.post('http://192.168.1.158:8080/postgig', values, options)
       .map(res => res.text())
@@ -65,11 +75,21 @@ console.log(this.searchbar.getValue());
         //   console.log(data);
         //    console.log("data");
       });
-
- 
   }
 
 
 
 
+  
+
+
+  itemTapped() {
+    console.log("ASDFASF");
+  }
+
 }
+
+
+
+
+

@@ -4,21 +4,22 @@
   </ion-navbar>
 </ion-header>
 
-<div class="fullscreen-bg">
 
-		<video class="fullscreen-bg__video" autoplay loop muted webkit-playsinline>
-			<source src="assets/video/Yellow_Traffic.mp4" type="video/mp4; codecs='h.264'" />
-			<source src="assets/video/Yellow_Traffic.webm" type="video/webm"/>
-		</video>
-	</div>
+<div class="overlay">
+  <div class="fullscreen-bg">
 
+    <video class="fullscreen-bg__video" autoplay loop muted webkit-playsinline>
+      <source src="assets/video/Yellow_Traffic.mp4" type="video/mp4; codecs='h.264'" />
+      <source src="assets/video/Yellow_Traffic.webm" type="video/webm" />
+    </video>
+  </div>
+</div>
 <ion-content padding>
   <form #form="ngForm" (ngSubmit)="login(form.value)" novalidate>
     <ion-list>
       <ion-item>
         <ion-label floating>Username</ion-label>
-        <ion-input type="text" name="username" ngModel required #username="ngModel"
-                   [class.invalid]="username.errors && username.dirty"></ion-input>
+        <ion-input type="text" name="username" ngModel required #username="ngModel" [class.invalid]="username.errors && username.dirty"></ion-input>
       </ion-item>
       <ion-item class="error-message" *ngIf="username.errors?.required && username.dirty">
         Username is required
@@ -26,8 +27,7 @@
 
       <ion-item>
         <ion-label floating>Password</ion-label>
-        <ion-input type="password" name="password" ngModel required #password="ngModel"
-                   [class.invalid]="password.errors && password.dirty"></ion-input>
+        <ion-input type="password" name="password" ngModel required #password="ngModel" [class.invalid]="password.errors && password.dirty"></ion-input>
       </ion-item>
       <ion-item class="error-message" *ngIf="password.errors?.required && password.dirty">
         Password is required

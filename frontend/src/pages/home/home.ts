@@ -42,7 +42,7 @@ export class HomePage {
         this.user = decoded.sub
       }
       else {
-        this.user = null;
+        this.user = null; 
       }
     });
 

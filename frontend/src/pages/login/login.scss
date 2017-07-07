@@ -19,14 +19,20 @@
             left: 0;
             height: 100%;
         }
+        .overlay {
+            background-color: rgba(138, 144, 138, 0.35);
+        }
         .content {
             background-color: initial;
         }
         .item {
             background-color: initial;
         }
+        .input{
+            color:white;
+        }
         .input-wrapper .label {
-            color: black; // font-size: 32px;
+            color: white; // font-size: 32px;
         }
         .toolbar-background {
             background-color: initial;

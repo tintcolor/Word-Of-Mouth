@@ -69,11 +69,11 @@ public class AuthController {
     public String authorize(@Valid @RequestBody User loginUser,
                             HttpServletResponse response) {
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
-                loginUser.getUsername(), loginUser.getPassword());
+                loginUser.getUsername().toLowerCase(), loginUser.getPassword());
 
         try {
             this.authenticationManager.authenticate(authenticationToken);
-            return tokenProvider.createToken(loginUser.getUsername());
+            return tokenProvider.createToken(loginUser.getUsername().toLowerCase());
         }
         catch (AuthenticationException e) {
             WordOfMouthApplication.logger.info("Security exception {}", e.getMessage());

@@ -11,9 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-/**
- * Created by anthonyjones on 7/5/17.
- */
+
 @RestController
 public class JobsController {
 

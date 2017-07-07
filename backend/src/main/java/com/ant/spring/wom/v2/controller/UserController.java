@@ -32,9 +32,7 @@ public class UserController {
     public ResponseEntity<Iterable<User>> getAllUsers() {
         Iterable<User> allUsers = userRepository.findAll();
         userService.displayAll();
-//        Iterable<User> asd =
-//        System.out.println(allUsers);
-//        System.out.println(userService.displayAll());
+
         return new ResponseEntity<>(allUsers, HttpStatus.OK);
     }
 
@@ -44,12 +42,9 @@ public class UserController {
     public Object currentUserName(Principal principal, HttpServletResponse http) {
 
         Iterable<User> allUsers = userRepository.findAll();
-//        Iterable<User> asd =
-//        System.out.println(allUsers);
 
         SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String user = principal.getName();
-//        System.out.println(user);
         User currentUser = userRepository.findOne(userRepository.findByUsername(user).getUserID());
         if (currentUser == null) {
             return null;
