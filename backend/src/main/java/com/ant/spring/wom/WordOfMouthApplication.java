@@ -21,6 +21,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @SpringBootApplication
 public class WordOfMouthApplication {
 
+
+
     public final static Logger logger = LoggerFactory.getLogger(WordOfMouthApplication.class);
 
     public static void main(String[] args) {
@@ -28,15 +30,7 @@ public class WordOfMouthApplication {
         SpringApplication.run(WordOfMouthApplication.class, args);
     }
 
-//    @Bean
-//    public WebMvcConfigurer corsConfigurer() {
-//        return new WebMvcConfigurerAdapter() {
-//            @Override
-//            public void addCorsMappings(CorsRegistry registry) {
-//                registry.addMapping("/login").allowedOrigins("http://localhost:8100");
-//            }
-//        };
-//    }
+
 
     @Bean
     public PasswordEncoder passwordEncoder() {

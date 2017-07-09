@@ -1,6 +1,4 @@
 // http://ionicframework.com/docs/v2/theming/
-
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -15,4 +13,23 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 @import "../../node_modules/ionic2-auto-complete/auto-complete";
+.content {
+    font-family: 'OpenSans';
+}
 
+.toolbar-title {
+    text-align: center;
+}
+
+.header-logo {
+    width: 21%;
+}
+
+.title {
+    width: 138%;
+    margin-left: -60px;
+}
+
+.back-button {
+    z-index: 1000;
+}

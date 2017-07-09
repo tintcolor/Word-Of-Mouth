@@ -1,0 +1,26 @@
+.ios,
+.md {
+    page-completed-post {
+        .popover-content {
+            top: 10%;
+            left: 81px;
+            transform-origin: left top 0px;
+            transform: scale(1);
+            height: 31%;
+            opacity: .9;
+            transform: translateY(0px);
+            width: 63%;
+            height: 25%;
+        }
+        .scroll-content {
+            text-align: center;
+        }
+        p {
+            font-size: 26px;
+            margin-top: 0px;
+        }
+        .fixed-content {
+            border: 2px solid gainsboro;
+        }
+    }
+}

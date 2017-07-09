@@ -1,13 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ColleagueListPage } from "../colleague-list/colleague-list"
+import { JwtHelper, AuthHttp } from "angular2-jwt";
+import { SERVER_URL } from "../../environment/config"
 
-/**
- * Generated class for the ViewOneGigPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @IonicPage()
 @Component({
   selector: 'page-view-one-gig',
@@ -21,14 +17,12 @@ export class ViewOneGigPage {
   date: any;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public authHttp: AuthHttp, ) {
     this.item = this.navParams.get("item");
-
   }
 
   ionViewWillEnter() {
     this.objectParser();
-
   }
 
   objectParser() {
@@ -43,4 +37,5 @@ export class ViewOneGigPage {
     //and once clicked it should alter the post and add the person
     this.navCtrl.push(ColleagueListPage, { item: this.item })
   }
+
 }

@@ -13,6 +13,7 @@ export class CompleteTestService implements AutoCompleteService {
 
   }
   getResults(keyword: string) {
+    
     return this.http.get(SERVER_URL + "job/" + keyword)
       .map(
       result => {

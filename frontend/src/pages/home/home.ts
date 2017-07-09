@@ -5,7 +5,7 @@ import { JwtHelper, AuthHttp } from "angular2-jwt";
 import { AuthService } from "../../providers/auth-service/auth-service";
 import { GigsPage } from "../gigs/gigs"
 import { PostgigPage } from "../../pages/postgig/postgig"
-import { ViewOneGigPage } from "../view-one-gig/view-one-gig"
+import { ViewPostedGigPage } from '../view-posted-gig/view-posted-gig';
 import { MyGigsPage } from '../mygigs/mygigs';
 import {SERVER_URL} from "../../environment/config"
 
@@ -96,12 +96,12 @@ export class HomePage {
 
   itemTapped(event, job) {
     // That's right, we're pushing to ourselves!
-    this.navCtrl.push(ViewOneGigPage, {
+    this.navCtrl.push(ViewPostedGigPage, {
       item: job
     });
   }
 
-  showGigs() {
+  showMyGigs() {
     this.isAllGigs = false;
     this.navCtrl.push(MyGigsPage, { id: this.userID, mainPosition: this.mainJob, isAllGigs: this.isAllGigs });
 

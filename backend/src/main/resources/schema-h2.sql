@@ -56,6 +56,9 @@ INSERT INTO gigs (seeking, description, rate, location, date, userid)
 VALUES ('Sound Mixer', 'Looking for a great Sound mixer to work on my project', '$150/day', 'NYC', '2017-12-17', 1);
 
 INSERT INTO gigs (seeking, description, rate, location, date, userid)
+VALUES ('Sound Mixer', 'Need Sound mixer to work on my Movie', '$950/day', 'NYC', '2017-02-11', 1);
+
+INSERT INTO gigs (seeking, description, rate, location, date, userid)
 VALUES ('Editor', 'Looking for editor to help me on my Thesis Film project', '$150/day', 'NYC', '2017-12-17', 1);
 
 INSERT INTO gigs (seeking, description, rate, location, date, userid)

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { JwtHelper, AuthHttp } from "angular2-jwt";
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { SERVER_URL } from "../../environment/config"
 /**
  * Generated class for the ColleagueListPage page.
  *
@@ -17,22 +17,27 @@ export class ColleagueListPage {
 
   userID: any;
   userObject: any;
-  connections: Array<any>=[];
+  colleagues: Array<any> = [];
   jobSoughtFor: any;
+  colleagueID: any;
+  gigID: any;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public authHttp: AuthHttp) {
-    console.log(this.navParams.get("item"));
+    // console.log(this.navParams.get("item"));
     this.userObject = this.navParams.get("item");
     this.jobSoughtFor = this.userObject.seeking;
-    console.log(this.userObject.userid);
+    // console.log(this.userObject.userid);
     this.userID = this.userObject.userid;
+    this.gigID = this.userObject.gigID;
+    // console.log(this.userObject.gigID + " Constructor");
   }
 
 
 
   ionViewWillEnter() {
-    this.authHttp.get(`http://localhost:8080/connection/` + this.userID).map((data) => data.json())
+
+    this.authHttp.get(SERVER_URL + `connection/` + this.userID).map((data) => data.json())
       .subscribe(
       data => {
         // console.log(data);
@@ -44,38 +49,38 @@ export class ColleagueListPage {
       );
   }
 
-  itemTapped(event, job) {
+  itemTapped(event, colleague) {
+    this.colleagueID = colleague.userID;
     // That's right, we're pushing to ourselves!
-    // this.navCtrl.push(ViewOneGigPage,  {
-    //   item: job
-    // });
+    console.log(colleague);
+
+    let values = {};
+
+    values["userID"] = this.colleagueID;
+    values["gigID"] = this.gigID;
+
+
+    console.log(values);
+
+    this.authHttp.post(SERVER_URL + `recommendgig/`, values).map((data) => data.json())
+      .subscribe(
+      data => {
+        // console.log(data);
+        // this.displayConnections(data);
+        // this.connections = data;
+        // console.log(this.connections);
+      },//
+      err => console.log(err)
+      );
   }
 
   displayConnections(user) {
 
     console.log(this.jobSoughtFor);
 
-    // var str = str.replace(/\s+/g, '');
-
-    for (let entry of user) {
-
-      // entry.mainJob
-      console.log();
-      if (this.jobSoughtFor == entry.mainJob.replace(/\s/g, '').toLowerCase()) {
-        console.log("Yes");
-        // this.connections.push(5,4,3);
-        this.connections.push(entry);
-      }
-    }
-    // console.log(user);
+    this.colleagues = user;
 
 
-    // this.connections = user;
-    // for (let gig of gigs) {
-    //   console.log(gig);
-    //   this.jobs = gig.seeking;
-    //   console.log("Above me");
-    // }
   }
 
 }

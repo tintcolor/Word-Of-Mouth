@@ -9,6 +9,8 @@ import { LoginPage } from '../pages/login/login';
 import { AuthService } from "../providers/auth-service/auth-service";
 import { CreateprofilePage } from "../pages/createprofile/createprofile"
 
+import { GigsPage } from "../pages/gigs/gigs"
+
 
 @Component({
   templateUrl: 'app.html'
@@ -43,8 +45,26 @@ export class MyApp {
     });
 
     this.authService.checkLogin();
+
+    this.pages = [
+      { title: 'Home', component: HomePage },
+      { title: 'Gigs', component: GigsPage }
+    ];
+
   }
 
+
+  openPage(page) {
+    // Reset the content nav to have just this page
+    // we wouldn't want the back button to show in this scenario
+    if (page.title == "Home") {
+      this.nav.setRoot(page.component);
+    } else {
+      console.log(page);
+      this.nav.push(page.component);
+    }
+
+  }
 
 }
 
@@ -57,9 +77,5 @@ export class MyApp {
   //   });
   // }
 
-  // openPage(page) {
-  //   // Reset the content nav to have just this page
-  //   // we wouldn't want the back button to show in this scenario
-  //   this.nav.setRoot(page.component);
-  // }
+
 

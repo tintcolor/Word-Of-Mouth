@@ -18,8 +18,10 @@ import { LoginPage } from "../pages/login/login";
 import { SignupPage } from "../pages/signup/signup";
 import { GigsPage } from "../pages/gigs/gigs"
 import { PostgigPage } from "../pages/postgig/postgig"
+import { CompletedPostPage } from "../pages/completed-post/completed-post";
 import { CreateprofilePage } from "../pages/createprofile/createprofile"
 import { ViewOneGigPage } from "../pages/view-one-gig/view-one-gig"
+import { ViewPostedGigPage } from '../pages/view-posted-gig/view-posted-gig';
 import { ColleagueListPage } from "../pages/colleague-list/colleague-list"
 import { MyGigsPage } from '../pages/mygigs/mygigs';
 
@@ -55,10 +57,12 @@ const routes: Routes = [
     SignupPage,
     GigsPage,
     PostgigPage,
+    CompletedPostPage,
     CreateprofilePage,
     ColleagueListPage,
     MyGigsPage,
-    ViewOneGigPage
+    ViewOneGigPage,
+    ViewPostedGigPage
     // RegisterPage
   ],
   imports: [
@@ -82,7 +86,9 @@ const routes: Routes = [
     SignupPage,
     GigsPage,
     PostgigPage,
+    CompletedPostPage,
     ViewOneGigPage,
+    ViewPostedGigPage,
     CreateprofilePage,
     MyGigsPage,
     ColleagueListPage

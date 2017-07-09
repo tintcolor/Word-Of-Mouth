@@ -4,11 +4,18 @@ import com.ant.spring.wom.domain.RecommendationConnection;
 import com.ant.spring.wom.repository.GigRepository;
 import com.ant.spring.wom.repository.RecommendationConnectionRepository;
 import com.ant.spring.wom.repository.UserRepository;
+import org.h2.jdbc.JdbcSQLException;
+import org.hibernate.engine.jdbc.spi.SqlExceptionHelper;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.inject.Inject;
+import javax.validation.Valid;
+import java.net.URI;
 import java.util.ArrayList;
 
 /**
@@ -20,8 +27,8 @@ public class RecommendationConnectionController {
     @Inject
     private RecommendationConnectionRepository recoConnRepo;
 
-    @Inject
-    private GigRepository gigRepository;
+    // @Inject
+    //private GigRepository gigRepository;
 
     @Inject
     private UserRepository userRepository;
@@ -43,7 +50,28 @@ public class RecommendationConnectionController {
                 arrayListOfRecommendations.add(userRepository.findOne(recoConnRepo.findOne((long) i).getUserID()));
             }
         }
-
         return new ResponseEntity<>(arrayListOfRecommendations, HttpStatus.OK);
     }
+
+    @RequestMapping(value = "/recommendgig", method = RequestMethod.POST)
+    @CrossOrigin
+    public ResponseEntity<?> recommendGig(@Valid @RequestBody RecommendationConnection recommend) {
+
+
+        recommend.setId(recoConnRepo.count() + 1);
+        recommend = recoConnRepo.save(recommend);
+
+        HttpHeaders responseHeaders = new HttpHeaders();
+        URI newRecommendationUri = ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(recommend.getId())
+                .toUri();
+        responseHeaders.setLocation(newRecommendationUri);
+
+
+        return new ResponseEntity<>(recommend, HttpStatus.CREATED);
+    }
+
+
 }

@@ -27,28 +27,17 @@ export class MyGigsPage {
   }
 
   ionViewWillEnter() {
-
-    if (this.isAllGigs == true) {
-      this.authHttp.get(SERVER_URL+`gigs/`).map((data) => data.json())
-        .subscribe(
-        data => {
-          //console.log(data.json());
-          this.displayGigs(data);
-          this.jobs = data;
-        },//
-        err => console.log(err)
-        );
-    } else {
-      this.authHttp.get(SERVER_URL+`mygigs/` + this.mainJob).map((data) => data.json())
-        .subscribe(
-        data => {
-          //console.log(data.json());
-          this.displayGigs(data);
-          this.jobs = data;
-        },//
-        err => console.log(err)
-        );
-    }
+    console.log(this.mainJob)
+    this.authHttp.get(SERVER_URL + `mygigs/` + this.mainJob).map((data) => data.json())
+      .subscribe(
+      data => {
+        //console.log(data.json());
+        this.displayGigs(data);
+        this.jobs = data;
+        console.log(this.jobs);
+      },//
+      err => console.log(err)
+      );
 
   }
 

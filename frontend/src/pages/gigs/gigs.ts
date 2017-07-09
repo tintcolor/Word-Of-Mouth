@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { JwtHelper, AuthHttp } from "angular2-jwt";
 import { HomeService } from "../home/homeService"
 import { ViewOneGigPage } from "../view-one-gig/view-one-gig"
-import {SERVER_URL} from "../../environment/config"
+import { SERVER_URL } from "../../environment/config"
 
 /**
  * Generated class for the GigsPage page.
@@ -33,31 +33,20 @@ export class GigsPage {
 
   ionViewWillEnter() {
 
-    if (this.isAllGigs == true) {
-      this.authHttp.get(SERVER_URL+`gigs/`).map((data) => data.json())
-        .subscribe(
-        data => {
-          //console.log(data.json());
-          this.displayGigs(data);
-          this.jobs = data;
-        },//
-        err => console.log(err)
-        );
-    } else {
-      this.authHttp.get(SERVER_URL+`mygigs/` + this.mainJob).map((data) => data.json())
-        .subscribe(
-        data => {
-          //console.log(data.json());
-          this.displayGigs(data);
-          this.jobs = data;
-        },//
-        err => console.log(err)
-        );
-    }
+    this.authHttp.get(SERVER_URL + `gigs/`).map((data) => data.json())
+      .subscribe(
+      data => {
+        //console.log(data.json());
+        this.displayGigs(data);
+        this.jobs = data;
+      },//
+      err => console.log(err)
+      );
+
 
   }
 
-  itemTapped(event, job) { 
+  itemTapped(event, job) {
     // That's right, we're pushing to ourselves!
     this.navCtrl.push(ViewOneGigPage, {
       item: job
@@ -66,7 +55,7 @@ export class GigsPage {
 
 
   displayGigs(gigs) {
-    console.log(this.jobs==null);
+    console.log(this.jobs == null);
     this.jobs = gigs;
     // for (let gig of gigs) {
     //   console.log(gig);

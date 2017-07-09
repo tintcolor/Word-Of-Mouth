@@ -7,14 +7,16 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Gigs for me</ion-title>
+    <ion-title>
+      <img class="header-logo" src="assets/img/headerlogo.png">
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <h1>Gigs for me</h1>
   <div class="mygig-card-list">
     <button *ngFor="let job of jobs" (click)="itemTapped($event, job)">
   
@@ -22,7 +24,7 @@
   <!--<img src="img/nin-live.png"/>-->
   <ion-card-content>
     <ion-card-title>
-     <span *ngIf="job?.seeking !=null">{{job.seeking}}</span>
+   {{job.seeking}}
       </ion-card-title>
     <p>
         <span *ngIf="job?.seeking !=null">{{job.description}}</span>

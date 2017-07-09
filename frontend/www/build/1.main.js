@@ -1,13 +1,13 @@
 webpackJsonp([1],{
 
-/***/ 737:
+/***/ 747:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__view_one_gig__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+throw new Error("Cannot find module \"./view-one-gig\"");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ViewOneGigPageModule", function() { return ViewOneGigPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -26,13 +26,13 @@ var ViewOneGigPageModule = (function () {
 ViewOneGigPageModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__view_one_gig__["a" /* ViewOneGigPage */],
+            __WEBPACK_IMPORTED_MODULE_2__view_one_gig__["ViewOneGigPage"],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__view_one_gig__["a" /* ViewOneGigPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__view_one_gig__["ViewOneGigPage"]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__view_one_gig__["a" /* ViewOneGigPage */]
+            __WEBPACK_IMPORTED_MODULE_2__view_one_gig__["ViewOneGigPage"]
         ]
     })
 ], ViewOneGigPageModule);

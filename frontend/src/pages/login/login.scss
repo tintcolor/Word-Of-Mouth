@@ -28,8 +28,8 @@
         .item {
             background-color: initial;
         }
-        .input{
-            color:white;
+        .input {
+            color: white;
         }
         .input-wrapper .label {
             color: white; // font-size: 32px;
@@ -48,15 +48,33 @@
         }
         .scroll-content {
             position: relative;
-            height: 500px;
+            height: 100%;
+            padding: 0;
         }
         form {
             position: absolute;
-            top: 50%;
+            top: 60%;
             left: 50%;
             transform: translate(-50%, -50%);
             width: 93%;
             height: 200px;
+        }
+        .list {
+            background: rgba(52, 52, 52, 0.45);
+            border-radius: 18px;
+        }
+        .logo {
+            width: 59%;
+            margin: 0 auto;
+            position: fixed;
+            top: 6%;
+            left: 20%;
+        }
+        .toolbar {
+            display: none;
+        }
+        .list-ios>.item-block:first-child {
+            border-top: initial;
         }
     }
 }

@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Filmed'IN</ion-title>
+   
   </ion-navbar>
 </ion-header>
 
@@ -9,10 +9,15 @@
   <div class="fullscreen-bg">
 
     <video class="fullscreen-bg__video" autoplay loop muted webkit-playsinline>
-      <source src="assets/video/Yellow_Traffic.mp4" type="video/mp4; codecs='h.264'" />
-      <source src="assets/video/Yellow_Traffic.webm" type="video/webm" />
+      <source src="assets/video/video2.mp4" type="video/mp4; " />
+      <!--<source src="assets/video/Yellow_Traffic.mp4" type="video/mp4; codecs='h.264'" />
+      <source src="assets/video/Yellow_Traffic.webm" type="video/webm" />-->
     </video>
   </div>
+</div>
+
+<div class="logo">
+  <img src="assets/img/logo.png">
 </div>
 <ion-content padding>
   <form #form="ngForm" (ngSubmit)="login(form.value)" novalidate>

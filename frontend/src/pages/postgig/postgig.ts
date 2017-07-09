@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
 import { Http, RequestOptions, Headers } from "@angular/http";
 import "rxjs/add/operator/map";
 import { NgModel } from "@angular/forms";
@@ -7,6 +7,9 @@ import { Storage } from "@ionic/storage";
 import { JwtHelper, AuthHttp } from "angular2-jwt";
 import { CompleteTestService } from './CompleteTestService';
 import { AutoCompleteComponent } from 'ionic2-auto-complete';
+import { SERVER_URL } from "../../environment/config"
+import { CompletedPostPage } from "../completed-post/completed-post";
+import { HomePage } from '../home/home';
 
 
 
@@ -33,9 +36,7 @@ export class PostgigPage {
   @ViewChild('username')
   usernameModel: NgModel;
   authUser = new ReplaySubject<any>(1);
-  
-  elementRef;
-  selectedIdx: number;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private readonly authHttp: AuthHttp,
@@ -43,48 +44,61 @@ export class PostgigPage {
     public http: Http,
     private readonly storage: Storage,
     public navParam: NavParams,
-    public completeTestService: CompleteTestService, myElement: ElementRef) {
+    public completeTestService: CompleteTestService,
+    myElement: ElementRef,
+    public popoverCtrl: PopoverController) {
 
-
-    this.elementRef = myElement;
-    this.selectedIdx = -1;
 
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PostgigPage');
-    // console.log(this.navParams);
-
     this.userID = this.navParams.data;
+    
+  }
+
+  presentAlert() {
+    let popover = this.popoverCtrl.create(CompletedPostPage);
+    popover.present();
+
+    setTimeout(function () {
+      popover.dismiss();
+
+    }, 3000);
+
+    setTimeout( () => {
+      // this.navCtrl.pop();
+      this.navCtrl.pop();
+    }, 3500);
+
   }
 
 
   sendJson(values: any) {
-    console.log(this.userID);
+    // console.log(this.userID);
     values["userid"] = this.userID;
     values["seeking"] = this.searchbar.getValue();
 
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
-    console.log(this.searchbar.getValue());
+    // console.log(this.searchbar.getValue());
     console.log(values);
-    return this.http.post('http://192.168.1.158:8080/postgig', values, options)
+    return this.http.post(SERVER_URL + 'postgig', values, options)
       .map(res => res.text())
       .subscribe(data => {
         //   console.log(data);
         //    console.log("data");
+        // this.presentAlert();
+        this.presentAlert();
+       
       });
+
+
   }
 
 
-
-
-  
-
-
   itemTapped() {
-    console.log("ASDFASF");
+  
   }
 
 }

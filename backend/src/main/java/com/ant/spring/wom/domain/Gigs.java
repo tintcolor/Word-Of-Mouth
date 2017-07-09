@@ -4,6 +4,8 @@ package com.ant.spring.wom.domain;
  * Created by anthonyjones on 6/25/17.
  */
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -16,6 +18,7 @@ public class Gigs {
     private Long gigID;
 
     @Column(name = "DATE")
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date date;
 
     @Column(name = "DESCRIPTION")

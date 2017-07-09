@@ -7,7 +7,9 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>ViewOneGig</ion-title>
+    <ion-title>
+      <img class="header-logo" src="assets/img/headerlogo.png">
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,11 +17,15 @@
 
 <ion-content padding>
 
-  <h1>{{seeking}} </h1>
-  <h2>{{description}}</h2>
-  <h3>{{location}} </h3>
-  <p>{{date}}</p>
 
-  <button (click)="recommend()">Recommend A Colleague</button>
+  <h1>{{seeking}} </h1><br />
+  <h3>Description: {{description}}</h3>
+  <h3>Location: {{location}} </h3>
+  <p>Date: {{date}}</p>
+
+  <button ion-button (click)="recommend()">Recommend A Colleague</button>
+
+
+  
 
 </ion-content>

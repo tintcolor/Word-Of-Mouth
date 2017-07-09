@@ -4,14 +4,7 @@
   </ion-navbar>
 </ion-header>
 
-
-
-
-
-
 <ion-content padding>
-  
-
 
 
   <form #form="ngForm" (ngSubmit)="sendJson(form.value)" novalidate>
@@ -19,8 +12,10 @@
 
 
       <ion-label>Seeking</ion-label>
+
+
       <ion-auto-complete [dataProvider]="completeTestService" #searchbar></ion-auto-complete>
-      
+
 
       <ion-item>
         <!--<ion-label floating>Date</ion-label>-->

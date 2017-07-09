@@ -15,9 +15,9 @@
 
 <ion-content padding>
   <ion-list>
-    <button ion-item *ngFor="let connection of connections" (click)="itemTapped($event, job)">
-      {{connection.name}}
-        {{connection.rate}}
+    <button ion-item *ngFor="let colleague of colleagues" (click)="itemTapped($event, colleague)">
+      {{colleague.name}}
+        <!--{{connection.rate}}-->
      
     </button>
   </ion-list>

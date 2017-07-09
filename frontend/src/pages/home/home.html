@@ -1,7 +1,10 @@
 <ion-header>
   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>
-      Logged in
+      <img class="header-logo" src="assets/img/headerlogo.png">
     </ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="logout()">
@@ -11,13 +14,17 @@
   </ion-navbar>
 </ion-header>
 
+
+
+
 <div class="background">
   <div class="overlay"></div>
 </div>
 
 <ion-content padding>
 
-  <h3 class="welcome"><strong>Welcome, {{firstName}}</strong> </h3>
+  <h3 class="welcome">Welcome, {{firstName}} </h3>
+  <button ion-button (click)="addFriend()">Add Friend</button>
   <h2 class="job"> <strong>{{mainJob}}</strong></h2>
   <br>
   <div class="photo_div">
@@ -26,19 +33,20 @@
   </div>
   <p class="rating"><strong>Rating: {{rating}}</strong></p><br>
 
-  
-  <button ion-button (click)="showGigs()">Find Work</button>
+  <div class="home-buttons">
+    <button ion-button (click)="showMyGigs()">Find Work</button>
 
-  <button ion-button (click)="createGig()">Create a gig</button>
+    <button ion-button (click)="createGig()">Create gig</button>
 
-  <button ion-button (click)="showAllGigs()">Show me all Work</button>
-
+    <button ion-button (click)="showAllGigs()">All Work</button>
+  </div>
+  <h2>Gigs I've posted</h2>
   <div class="list_of_posted_gigs">
 
     <button ion-item *ngFor="let postedGig of postedGigs" (click)="itemTapped($event, postedGig)">
-    {{postedGig.seeking}}
-     
-        {{postedGig.rate}}
+   <h4> {{postedGig.seeking}}</h4>
+   <p>{{postedGig.date}}</p>
+      <p>  {{postedGig.rate}}</p>
      
     </button>
 

@@ -24815,6 +24815,59 @@ ion-auto-complete ul li:hover {
   background: #f1f1f1;
 }
 
+.content {
+  font-family: 'OpenSans';
+}
+
+.toolbar-title {
+  text-align: center;
+}
+
+.header-logo {
+  width: 21%;
+}
+
+.title {
+  width: 138%;
+  margin-left: -60px;
+}
+
+.back-button {
+  z-index: 1000;
+}
+
+.ios page-completed-post .popover-content,
+.md page-completed-post .popover-content {
+  top: 10%;
+  left: 81px;
+  -webkit-transform-origin: left top 0px;
+  transform-origin: left top 0px;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  height: 31%;
+  opacity: .9;
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px);
+  width: 63%;
+  height: 25%;
+}
+
+.ios page-completed-post .scroll-content,
+.md page-completed-post .scroll-content {
+  text-align: center;
+}
+
+.ios page-completed-post p,
+.md page-completed-post p {
+  font-size: 26px;
+  margin-top: 0px;
+}
+
+.ios page-completed-post .fixed-content,
+.md page-completed-post .fixed-content {
+  border: 2px solid gainsboro;
+}
+
 .ios page-gigs .gig-card-list button,
 .md page-gigs .gig-card-list button {
   width: 100%;
@@ -24863,6 +24916,27 @@ ion-auto-complete ul li:hover {
 
 .ios page-home .rating,
 .md page-home .rating {
+  text-align: center;
+}
+
+.ios page-home .item,
+.md page-home .item {
+  background-color: rgba(255, 255, 255, 0.13);
+}
+
+.ios page-home h2,
+.md page-home h2 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.ios page-home .home-buttons,
+.md page-home .home-buttons {
+  text-align: center;
+}
+
+.ios page-home .toolbar-title,
+.md page-home .toolbar-title {
   text-align: center;
 }
 
@@ -24939,13 +25013,14 @@ ion-auto-complete ul li:hover {
 .ios page-login .scroll-content,
 .md page-login .scroll-content {
   position: relative;
-  height: 500px;
+  height: 100%;
+  padding: 0;
 }
 
 .ios page-login form,
 .md page-login form {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -24953,10 +25028,34 @@ ion-auto-complete ul li:hover {
   height: 200px;
 }
 
+.ios page-login .list,
+.md page-login .list {
+  background: rgba(52, 52, 52, 0.45);
+  border-radius: 18px;
+}
+
+.ios page-login .logo,
+.md page-login .logo {
+  width: 59%;
+  margin: 0 auto;
+  position: fixed;
+  top: 6%;
+  left: 20%;
+}
+
+.ios page-login .toolbar,
+.md page-login .toolbar {
+  display: none;
+}
+
+.ios page-login .list-ios > .item-block:first-child,
+.md page-login .list-ios > .item-block:first-child {
+  border-top: initial;
+}
+
 .ios page-mygigs .mygig-card-list,
 .md page-mygigs .mygig-card-list {
   width: 100%;
-  display: none;
 }
 
 .ios page-mygigs .mygig-card-list button,
@@ -24964,6 +25063,15 @@ ion-auto-complete ul li:hover {
   width: 100%;
 }
 
-page-postgig .overlay {
+.ios page-postgig .overlay,
+.md page-postgig .overlay {
   background-color: green;
+}
+
+page-view-one-gig h1 {
+  text-align: center;
+}
+
+page-view-one-gig h1 {
+  text-align: center;
 }

@@ -14,6 +14,7 @@ import javax.validation.Valid;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.stream.Stream;
 
 /**
  * Created by anthonyjones on 6/25/17.
@@ -39,7 +40,6 @@ public class GigController {
 
         newPostGig.setGigID(gigRepository.count() + 1);
         newPostGig = gigRepository.save(newPostGig);
-        gigRepository.save(newPostGig);
 
         HttpHeaders responseHeaders = new HttpHeaders();
         URI newGigUri = ServletUriComponentsBuilder
@@ -56,7 +56,6 @@ public class GigController {
     @RequestMapping(value = "mygigs/{mainJob}", method = RequestMethod.GET)
     @CrossOrigin
     public ResponseEntity<?> getMyGigs(@PathVariable String mainJob) {
-        //Take userID and mainJob, compare userID with gigUserID, if same, do not add to arraylist
         ArrayList arrayListOfGigs = new ArrayList<>();
 
         String mainJobFormatted = Arrays.toString(mainJob.trim()
@@ -65,13 +64,13 @@ public class GigController {
                 .substring(1)
                 .replaceFirst("]", "")
                 .replace(", ", "");
-
-        for (int i = 0; i < gigRepository.count() - 1; i++) {
-            arrayListOfGigs.add(gigRepository.findBySeeking(mainJobFormatted));
-        }
-
+         gigRepository.findAll().forEach(item -> Stream.of(item)
+                 .filter(item2 -> item2.getSeeking().equals(mainJob))
+                 .forEach(item2 -> arrayListOfGigs.add(item2)));
         return new ResponseEntity<>(arrayListOfGigs, HttpStatus.OK);
     }
+
+
 
 
 }
