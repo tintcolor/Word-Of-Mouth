@@ -24,6 +24,8 @@ import { ViewOneGigPage } from "../pages/view-one-gig/view-one-gig"
 import { ViewPostedGigPage } from '../pages/view-posted-gig/view-posted-gig';
 import { ColleagueListPage } from "../pages/colleague-list/colleague-list"
 import { MyGigsPage } from '../pages/mygigs/mygigs';
+import { FindFriendsPage } from '../pages/find-friends/find-friends';
+
 
 
 
@@ -62,7 +64,8 @@ const routes: Routes = [
     ColleagueListPage,
     MyGigsPage,
     ViewOneGigPage,
-    ViewPostedGigPage
+    ViewPostedGigPage,
+    FindFriendsPage
     // RegisterPage
   ],
   imports: [
@@ -91,7 +94,8 @@ const routes: Routes = [
     ViewPostedGigPage,
     CreateprofilePage,
     MyGigsPage,
-    ColleagueListPage
+    ColleagueListPage,
+    FindFriendsPage
     // RegisterPage
   ],
   providers: [

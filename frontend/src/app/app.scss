@@ -13,23 +13,41 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 @import "../../node_modules/ionic2-auto-complete/auto-complete";
-.content {
-    font-family: 'OpenSans';
-}
-
-.toolbar-title {
-    text-align: center;
-}
-
-.header-logo {
-    width: 21%;
-}
-
-.title {
-    width: 138%;
-    margin-left: -60px;
-}
-
-.back-button {
-    z-index: 1000;
+.ios,
+.md {
+    .content {
+        font-family: 'OpenSans';
+    }
+    .toolbar-title {
+        text-align: center;
+    }
+    .header-logo {
+        width: 21%;
+    }
+    .title {
+        width: 138%;
+        margin-left: -60px;
+    }
+    .back-button {
+        z-index: 1000;
+    }
+    .menu-inner > ion-header{}
+    ion-menu {
+       
+    }
+    .menu-inner {
+      
+        .item-block {
+                padding-top: 4%;
+        }
+        .toolbar-background {
+            background: rgba(206, 212, 206, 0.69);
+        }
+        .toolbar {
+            min-height: 8em;
+        }
+        .toolbar-title {
+            color: white;
+        }
+    }
 }

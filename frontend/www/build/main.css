@@ -24815,25 +24815,50 @@ ion-auto-complete ul li:hover {
   background: #f1f1f1;
 }
 
-.content {
+.ios .content,
+.md .content {
   font-family: 'OpenSans';
 }
 
-.toolbar-title {
+.ios .toolbar-title,
+.md .toolbar-title {
   text-align: center;
 }
 
-.header-logo {
+.ios .header-logo,
+.md .header-logo {
   width: 21%;
 }
 
-.title {
+.ios .title,
+.md .title {
   width: 138%;
   margin-left: -60px;
 }
 
-.back-button {
+.ios .back-button,
+.md .back-button {
   z-index: 1000;
+}
+
+.ios .menu-inner .item-block,
+.md .menu-inner .item-block {
+  padding-top: 4%;
+}
+
+.ios .menu-inner .toolbar-background,
+.md .menu-inner .toolbar-background {
+  background: rgba(206, 212, 206, 0.69);
+}
+
+.ios .menu-inner .toolbar,
+.md .menu-inner .toolbar {
+  min-height: 8em;
+}
+
+.ios .menu-inner .toolbar-title,
+.md .menu-inner .toolbar-title {
+  color: white;
 }
 
 .ios page-completed-post .popover-content,
@@ -25072,6 +25097,6 @@ page-view-one-gig h1 {
   text-align: center;
 }
 
-page-view-one-gig h1 {
+page-view-posted-gig h1 {
   text-align: center;
 }

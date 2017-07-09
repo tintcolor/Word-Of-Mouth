@@ -75,12 +75,7 @@ export class ColleagueListPage {
   }
 
   displayConnections(user) {
-
-    console.log(this.jobSoughtFor);
-
-    this.colleagues = user;
-
-
+    this.colleagues = user;  
   }
 
 }

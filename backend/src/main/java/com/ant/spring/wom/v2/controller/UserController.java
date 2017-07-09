@@ -12,6 +12,10 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.security.Principal;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
 
 
 /**
@@ -86,6 +90,21 @@ public class UserController {
 
         return new ResponseEntity<>(HttpStatus.CREATED);
 
+    }
+
+
+    @RequestMapping(value = "/users/{id}", method = RequestMethod.GET)
+    @CrossOrigin
+    public ResponseEntity<Iterable<User>> getAllOtherUsers(@PathVariable long id) {
+
+        List<User> listOfOtherUsers = new ArrayList<>();
+
+        for (int i = 1; i <= userRepository.count(); i++) {
+            if (userRepository.findOne((long) i).getUserID() != id) {
+                listOfOtherUsers.add(userRepository.findOne((long) i));
+            }
+        }
+        return new ResponseEntity<>(listOfOtherUsers, HttpStatus.OK);
     }
 
 

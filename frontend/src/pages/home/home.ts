@@ -7,7 +7,8 @@ import { GigsPage } from "../gigs/gigs"
 import { PostgigPage } from "../../pages/postgig/postgig"
 import { ViewPostedGigPage } from '../view-posted-gig/view-posted-gig';
 import { MyGigsPage } from '../mygigs/mygigs';
-import {SERVER_URL} from "../../environment/config"
+import { FindFriendsPage } from '../find-friends/find-friends';
+import { SERVER_URL } from "../../environment/config"
 
 
 
@@ -42,7 +43,7 @@ export class HomePage {
         this.user = decoded.sub
       }
       else {
-        this.user = null; 
+        this.user = null;
       }
     });
 
@@ -53,7 +54,7 @@ export class HomePage {
   //8080/user
   //when this page is hit, it automatically loads up content
   ionViewWillEnter() {
-    this.authHttp.get(SERVER_URL+`user`).subscribe(
+    this.authHttp.get(SERVER_URL + `user`).subscribe(
       data => {
         // console.log(data.json())
 
@@ -104,7 +105,6 @@ export class HomePage {
   showMyGigs() {
     this.isAllGigs = false;
     this.navCtrl.push(MyGigsPage, { id: this.userID, mainPosition: this.mainJob, isAllGigs: this.isAllGigs });
-
   }
 
   showAllGigs() {
@@ -113,6 +113,9 @@ export class HomePage {
 
   }
 
+  addFriend() {//Change to Modal
+    this.navCtrl.push(FindFriendsPage,{id:this.userID});
+  }
 
 
 }

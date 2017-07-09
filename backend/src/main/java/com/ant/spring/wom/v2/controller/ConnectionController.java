@@ -39,7 +39,6 @@ public class ConnectionController {
         return new ResponseEntity<>(allGigs, HttpStatus.OK);
     }
 
-
     @RequestMapping(value = "/connection/{id}", method = RequestMethod.GET)
     @CrossOrigin
     public ResponseEntity<?> getMyFriends(@PathVariable Long id) {
