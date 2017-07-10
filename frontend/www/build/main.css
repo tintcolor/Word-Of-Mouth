@@ -29957,6 +29957,7 @@ ion-auto-complete ul li:hover {
 .md page-login .list {
   background: rgba(52, 52, 52, 0.45);
   border-radius: 18px;
+  border-bottom: initial;
 }
 
 .ios page-login .logo,

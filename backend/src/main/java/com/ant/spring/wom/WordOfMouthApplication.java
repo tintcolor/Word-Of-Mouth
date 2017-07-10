@@ -1,6 +1,7 @@
 package com.ant.spring.wom;
 
 //import org.h2.server.web.WebServlet;
+import org.h2.server.web.WebServlet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -30,7 +31,12 @@ public class WordOfMouthApplication {
         SpringApplication.run(WordOfMouthApplication.class, args);
     }
 
-
+    @Bean
+    ServletRegistrationBean h2servletRegistration(){
+        ServletRegistrationBean registrationBean = new ServletRegistrationBean( new WebServlet());
+        registrationBean.addUrlMappings("/console/*");
+        return registrationBean;
+    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
