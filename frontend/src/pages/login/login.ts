@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
-import {NavController, LoadingController, ToastController} from 'ionic-angular';
-import {SignupPage} from "../signup/signup";
-import {AuthService} from "../../providers/auth-service/auth-service";
+import { Component } from '@angular/core';
+import { NavController, LoadingController, ToastController, MenuController } from 'ionic-angular';
+import { SignupPage } from "../signup/signup";
+import { AuthService } from "../../providers/auth-service/auth-service";
 
 @Component({
   selector: 'page-login',
@@ -10,9 +10,9 @@ import {AuthService} from "../../providers/auth-service/auth-service";
 export class LoginPage {
 
   constructor(private readonly navCtrl: NavController,
-              private readonly loadingCtrl: LoadingController,
-              private readonly authService: AuthService,
-              private readonly toastCtrl: ToastController) {
+    private readonly loadingCtrl: LoadingController,
+    private readonly authService: AuthService,
+    private readonly toastCtrl: ToastController, private menu: MenuController) {
   }
 
   signup() {
@@ -31,8 +31,8 @@ export class LoginPage {
       .login(value)
       .finally(() => loading.dismiss())
       .subscribe(
-        () => {},
-        err => this.handleError(err));
+      () => { },
+      err => this.handleError(err));
   }
 
   handleError(error: any) {
@@ -51,6 +51,20 @@ export class LoginPage {
     });
 
     toast.present();
+  }
+
+
+  ionViewWillEnter() {
+    this.menu.enable(false);
+    this.menu.swipeEnable(false)
+
+  }
+
+
+  ionViewWillLeave() {
+    this.menu.enable(true);
+    this.menu.swipeEnable(true)
+
   }
 
 }

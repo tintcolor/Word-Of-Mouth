@@ -33,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ant/spring/wom/v2/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="99" column="35" lean-forward="false" selection-start-line="99" selection-start-column="35" selection-end-line="99" selection-end-column="35" />
+            <state relative-caret-position="747">
+              <caret line="110" column="1" lean-forward="true" selection-start-line="110" selection-start-column="1" selection-end-line="110" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -46,8 +46,8 @@
       <file leaf-file-name="schema-h2.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/schema-h2.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1474">
-              <caret line="99" column="10" lean-forward="true" selection-start-line="99" selection-start-column="10" selection-end-line="99" selection-end-column="10" />
+            <state relative-caret-position="329">
+              <caret line="83" column="51" lean-forward="true" selection-start-line="83" selection-start-column="51" selection-end-line="83" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -66,21 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConnectionRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ant/spring/wom/repository/ConnectionRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConnectionController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ConnectionController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ant/spring/wom/v2/controller/ConnectionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="53">
-              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="39" selection-end-column="5" />
+            <state relative-caret-position="-189">
+              <caret line="57" column="60" lean-forward="false" selection-start-line="57" selection-start-column="60" selection-end-line="57" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -163,14 +153,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/ant/spring/wom/AuthController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ant/spring/wom/v2/controller/JobsController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ant/spring/wom/domain/Gigs.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/schema-h2.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/ant/spring/wom/WordOfMouthApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ant/spring/wom/v2/controller/GigController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ant/spring/wom/v2/controller/RecommendationConnectionController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ant/spring/wom/v2/controller/ConnectionController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ant/spring/wom/repository/UserRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ant/spring/wom/domain/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ant/spring/wom/v2/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/schema-h2.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ant/spring/wom/v2/controller/ConnectionController.java" />
       </list>
     </option>
   </component>
@@ -1146,7 +1136,7 @@
       <workItem from="1498246441299" duration="159000" />
       <workItem from="1498247235810" duration="52220000" />
       <workItem from="1498408389759" duration="90292000" />
-      <workItem from="1499524093062" duration="16150000" />
+      <workItem from="1499524093062" duration="17883000" />
     </task>
     <servers />
   </component>
@@ -1180,7 +1170,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="245974000" />
+    <option name="totallyTimeSpent" value="247707000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1262" height="773" extended-state="0" />
@@ -1567,14 +1557,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/schema-h2.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1474">
-          <caret line="99" column="10" lean-forward="true" selection-start-line="99" selection-start-column="10" selection-end-line="99" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ant/spring/wom/v2/controller/RecommendationConnectionController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
@@ -1590,17 +1572,6 @@
           <folding>
             <element signature="e#738#739#0" expanded="false" />
             <element signature="e#767#768#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ant/spring/wom/domain/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="29" column="12" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
-          <folding>
-            <element signature="e#1338#1339#0" expanded="true" />
-            <element signature="e#1384#1385#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1645,22 +1616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ant/spring/wom/v2/controller/ConnectionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="39" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ant/spring/wom/repository/ConnectionRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/src.zip!/java/util/Collections.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -1682,8 +1637,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ant/spring/wom/v2/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="99" column="35" lean-forward="false" selection-start-line="99" selection-start-column="35" selection-end-line="99" selection-end-column="35" />
+        <state relative-caret-position="747">
+          <caret line="110" column="1" lean-forward="true" selection-start-line="110" selection-start-column="1" selection-end-line="110" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/schema-h2.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="83" column="51" lean-forward="true" selection-start-line="83" selection-start-column="51" selection-end-line="83" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ant/spring/wom/repository/ConnectionRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ant/spring/wom/domain/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="29" column="12" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+          <folding>
+            <element signature="e#1338#1339#0" expanded="true" />
+            <element signature="e#1384#1385#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ant/spring/wom/v2/controller/ConnectionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-189">
+          <caret line="57" column="60" lean-forward="false" selection-start-line="57" selection-start-column="60" selection-end-line="57" selection-end-column="60" />
           <folding />
         </state>
       </provider>

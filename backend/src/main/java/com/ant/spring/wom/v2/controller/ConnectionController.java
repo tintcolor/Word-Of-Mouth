@@ -55,6 +55,7 @@ public class ConnectionController {
     //For now, friending a person automatically friends them to you as well
     @RequestMapping(value = "/connection", method = RequestMethod.POST)
     @CrossOrigin
+    @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity<?> addAFriend(@Valid @RequestBody Connection newFriend) {
 
         newFriend.setId(connectionRepository.count() + 1);
@@ -76,6 +77,7 @@ public class ConnectionController {
     }
 
     //This most likely wont be here in the future
+    @ExceptionHandler(DataIntegrityViolationException.class)
     private void reverseFriendship(Connection newFriendshipFlipped) {
 
         Connection flippedConnection = new Connection();
@@ -89,9 +91,22 @@ public class ConnectionController {
 
         } catch (DataIntegrityViolationException e) {
             System.out.println("This connection already Exist " + e);
+            throw new DataIntegrityViolationException("Given name is too short");
         }
 
 
+    }
+
+    @ResponseStatus(value=HttpStatus.CONFLICT,
+            reason="Data integrity violation")  // 409
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    public void conflict() {
+        // Nothing to do
+    }
+
+    @ResponseStatus(value=HttpStatus.INTERNAL_SERVER_ERROR, reason="No such Order")  // 404
+    public class OrderNotFoundException extends RuntimeException {
+        // ...
     }
 
 }

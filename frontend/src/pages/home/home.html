@@ -1,35 +1,36 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
+
+
+<ion-content >
+<div class=" home-header-box">
+
+<button class="menu remove-shadow" ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
-    </button>
+    </button >
     <ion-title>
-      <img class="header-logo" src="assets/img/headerlogo.png">
+      <!--<img class="header-logo" src="assets/img/headerlogo.png">-->
     </ion-title>
-    <ion-buttons end>
-      <button ion-button icon-only (click)="logout()">
+   
+      <!--<button class="signout remove-shadow" ion-button icon-only (click)="logout()">
         <ion-icon name="exit"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-navbar>
-</ion-header>
-
-
-
-
+      </button>-->
+   
+<!--<div class="home-header-box"> </div>
 <div class="background">
   <div class="overlay"></div>
-</div>
+</div>-->
 
-<ion-content padding>
+
+
+
 
   <h3 class="welcome">Welcome, {{firstName}} </h3>
-  <button ion-button (click)="addFriend()">Add Friend</button>
   <h2 class="job"> <strong>{{mainJob}}</strong></h2>
   <br>
   <div class="photo_div">
-    <img [src]="photo"><br>
+    <img style="border: 2px solid white;max-width: 80%;" [src]="photo"><br>
     <!--<strong>Username: {{username}}</strong><br>-->
+    <button ion-button (click)="addFriend()">Add Friend</button>
+
   </div>
   <p class="rating"><strong>Rating: {{rating}}</strong></p><br>
 
@@ -49,7 +50,7 @@
       <p>  {{postedGig.rate}}</p>
      
     </button>
-
+</div>
   </div>
 
 </ion-content>

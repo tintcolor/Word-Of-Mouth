@@ -18,21 +18,20 @@ import { SERVER_URL } from "../../environment/config"
 export class FindFriendsPage {
 
   users: Array<any> = [];
-  userID:any;
+  userID: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public authHttp: AuthHttp) {
-        this.userID = this.navParams.get("id");
+    this.userID = this.navParams.get("id");
 
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad FindFriendsPage');
+    console.log('ionViewDidLoad  FindFriendsPage');
   }
 
 
   ionViewWillEnter() {
-
-    this.authHttp.get(SERVER_URL + `users/`+this.userID).map((data) => data.json())
+    this.authHttp.get(SERVER_URL + `users/` + this.userID).map((data) => data.json())
       .subscribe(
       data => {
         this.displayusers(data);
@@ -42,7 +41,21 @@ export class FindFriendsPage {
   }
 
   displayusers(user) {
-  this.users = user;
+    this.users = user;
+  }
+
+  itemTapped(event, user) {
+
+    let values = {};
+    values["userID"] = this.userID;
+    values["friendID"] = user.userID;
+    console.log(values);
+    this.authHttp.post(SERVER_URL + 'connection/', values).map((data) => data.json())
+      .subscribe(
+      data => {
+      },
+      err => console.log(err)
+      );
   }
 
 }

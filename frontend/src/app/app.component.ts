@@ -10,6 +10,11 @@ import { AuthService } from "../providers/auth-service/auth-service";
 import { CreateprofilePage } from "../pages/createprofile/createprofile"
 
 import { GigsPage } from "../pages/gigs/gigs"
+import { PostgigPage } from "../pages/postgig/postgig"
+import { ViewPostedGigPage } from '../pages/view-posted-gig/view-posted-gig';
+import { MyGigsPage } from '../pages/mygigs/mygigs';
+import { FindFriendsPage } from '../pages/find-friends/find-friends';
+
 
 
 @Component({
@@ -48,6 +53,7 @@ export class MyApp {
 
     this.pages = [
       { title: 'Home', component: HomePage },
+      { title: 'Post Gig', component: PostgigPage },
       { title: 'Gigs', component: GigsPage }
     ];
 
@@ -65,6 +71,11 @@ export class MyApp {
     }
 
   }
+
+   logout() {
+    this.authService.logout();
+  }
+
 
 }
 

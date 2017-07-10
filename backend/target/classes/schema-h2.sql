@@ -76,11 +76,11 @@ CREATE TABLE CONNECTION (
 
 -- INSERT INTO connection (userid, friendid) VALUES (1, 1);
 INSERT INTO connection (userid1, userid2) VALUES (1, 2);
-INSERT INTO connection (userid1, userid2) VALUES (1, 3);
-INSERT INTO connection (userid1, userid2) VALUES (2, 3);
-INSERT INTO connection (userid1, userid2) VALUES (2, 1);
-INSERT INTO connection (userid1, userid2) VALUES (1, 4);
--- INSERT INTO connection (userid1, userid2) VALUES (3, 2);
+-- INSERT INTO connection (userid1, userid2) VALUES (1, 3);
+-- INSERT INTO connection (userid1, userid2) VALUES (2, 3);
+-- INSERT INTO connection (userid1, userid2) VALUES (2, 1);
+-- INSERT INTO connection (userid1, userid2) VALUES (1, 4);
+INSERT INTO connection (userid1, userid2) VALUES (3, 2);
 -- INSERT INTO connection (userid1, userid2) VALUES (3, 1);
 
 DROP TABLE RECOMMENDATIONCONNECTION;
