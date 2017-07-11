@@ -12,6 +12,7 @@ import { NavController } from 'ionic-angular';
 import { AutoCompleteModule } from 'ionic2-auto-complete';
 
 import { MyApp } from './app.component';
+import { TabsPage } from '../pages/tabs/tabs';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from "../pages/login/login";
@@ -53,6 +54,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     MyApp,
+    TabsPage,
     HomePage,
     ListPage,
     LoginPage,
@@ -83,6 +85,7 @@ const routes: Routes = [
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    TabsPage,
     HomePage,
     ListPage,
     LoginPage,

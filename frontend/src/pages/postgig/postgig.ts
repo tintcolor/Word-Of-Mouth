@@ -47,13 +47,13 @@ export class PostgigPage {
     public completeTestService: CompleteTestService,
     myElement: ElementRef,
     public popoverCtrl: PopoverController) {
-
+    this.userID = this.navParams.get("id");
 
   }
 
   ionViewDidLoad() {
     this.userID = this.navParams.data;
-    
+
   }
 
   presentAlert() {
@@ -65,17 +65,16 @@ export class PostgigPage {
 
     }, 3000);
 
-    setTimeout( () => {
-      // this.navCtrl.pop();
-      this.navCtrl.pop();
-    }, 3500);
+    // setTimeout(() => {
+    //   this.navCtrl.pop();
+    // }, 3500);
 
   }
 
 
   sendJson(values: any) {
     // console.log(this.userID);
-    values["userid"] = this.userID;
+    values["userid"] = this.userID.id;
     values["seeking"] = this.searchbar.getValue();
 
     let headers = new Headers({ 'Content-Type': 'application/json' });
@@ -90,7 +89,7 @@ export class PostgigPage {
         //    console.log("data");
         // this.presentAlert();
         this.presentAlert();
-       
+
       });
 
 
@@ -98,7 +97,7 @@ export class PostgigPage {
 
 
   itemTapped() {
-  
+
   }
 
 }

@@ -1,5 +1,5 @@
-import { Component,ViewChild } from '@angular/core';
-import { NavController, LoadingController, ToastController, NavParams,Tabs } from 'ionic-angular';
+import { Component } from '@angular/core';
+import { NavController, LoadingController, ToastController, NavParams } from 'ionic-angular';
 import { JwtHelper, AuthHttp } from "angular2-jwt";
 // import {SERVER_URL} from "../../../config";
 import { AuthService } from "../../providers/auth-service/auth-service";
@@ -18,7 +18,6 @@ import { SERVER_URL } from "../../environment/config"
   templateUrl: 'home.html'
 })
 export class HomePage {
-  
   user: string;
   userID: any;
   username: string;
@@ -49,12 +48,6 @@ export class HomePage {
     });
 
   }
-  
-  @ViewChild('myTabs') tabRef: Tabs;
-
-ionViewDidEnter() {
-  
- }
 
 
   // Alter http for new user, it should direct them to another page to fill out form, and not call

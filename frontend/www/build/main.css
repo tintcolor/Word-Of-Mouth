@@ -29748,6 +29748,11 @@ ion-auto-complete ul li:hover {
   width: 100%;
 }
 
+.ios page-gigs .toolbar-title,
+.md page-gigs .toolbar-title {
+  text-align: center;
+}
+
 .ios page-home .background,
 .md page-home .background {
   background: url("/assets/img/homepage_bg.jpg");
@@ -29803,6 +29808,9 @@ ion-auto-complete ul li:hover {
 .ios page-home h2,
 .md page-home h2 {
   text-align: center;
+  background: #236936;
+  color: white;
+  padding: 4px;
 }
 
 .ios page-home h2 strong,
@@ -29819,6 +29827,7 @@ ion-auto-complete ul li:hover {
 .ios page-home .home-buttons,
 .md page-home .home-buttons {
   text-align: center;
+  display: none;
 }
 
 .ios page-home .home-header-box,
@@ -29843,6 +29852,7 @@ ion-auto-complete ul li:hover {
 .md page-home .button {
   z-index: 1000;
   background: #236936;
+  border-radius: 30px;
 }
 
 .ios page-home .menu,
@@ -30004,10 +30014,35 @@ ion-auto-complete ul li:hover {
   background: initial;
 }
 
+.ios page-postgig .toolbar-title,
+.md page-postgig .toolbar-title {
+  text-align: center;
+}
+
 page-view-one-gig h1 {
+  text-align: center;
+}
+
+page-view-one-gig .scroll-content {
   text-align: center;
 }
 
 page-view-posted-gig h1 {
   text-align: center;
+}
+
+page-view-posted-gig h2 {
+  text-align: center;
+  background: #236936;
+  color: white;
+  padding: 4px;
+}
+
+page-view-posted-gig .scroll-content {
+  text-align: center;
+}
+
+page-view-posted-gig .toolbar-title {
+  text-align: center;
+  margin-left: -27px;
 }

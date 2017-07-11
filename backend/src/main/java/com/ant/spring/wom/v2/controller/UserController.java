@@ -60,8 +60,6 @@ public class UserController {
         }
     }
 
-    //
-//
     @RequestMapping(value = "/alteruser", method = RequestMethod.PUT)
     @CrossOrigin
     public ResponseEntity<Void> createUser(@RequestBody User newUser) {
@@ -95,6 +93,7 @@ public class UserController {
 
     @RequestMapping(value = "/users/{id}", method = RequestMethod.GET)
     @CrossOrigin
+    //This is to display other users on the app except for logged in user
     public ResponseEntity<Iterable<User>> getAllOtherUsers(@PathVariable long id) {
 
         List<User> listOfOtherUsers = new ArrayList<>();

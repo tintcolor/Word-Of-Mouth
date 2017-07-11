@@ -22,6 +22,7 @@ export class FindFriendsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public authHttp: AuthHttp) {
     this.userID = this.navParams.get("id");
+    console.log(this.userID);
 
   }
 

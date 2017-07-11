@@ -1,9 +1,7 @@
+<ion-content>
+  <div class=" home-header-box">
 
-
-<ion-content >
-<div class=" home-header-box">
-
-<button class="menu remove-shadow" ion-button menuToggle>
+    <button class="menu remove-shadow" ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button >
     <ion-title>
@@ -13,8 +11,8 @@
       <!--<button class="signout remove-shadow" ion-button icon-only (click)="logout()">
         <ion-icon name="exit"></ion-icon>
       </button>-->
-   
-<!--<div class="home-header-box"> </div>
+
+    <!--<div class="home-header-box"> </div>
 <div class="background">
   <div class="overlay"></div>
 </div>-->
@@ -23,40 +21,34 @@
 
 
 
-  <h3 class="welcome">Welcome, {{firstName}} </h3>
-  <h2 class="job"> <strong>{{mainJob}}</strong></h2>
-  <br>
-  <div class="photo_div">
-    <img style="border: 2px solid white;max-width: 80%;" [src]="photo"><br>
-    <!--<strong>Username: {{username}}</strong><br>-->
-    <button ion-button (click)="addFriend()">Add Friend</button>
+    <h3 class="welcome">Welcome, {{firstName}} </h3>
+    <h2 class="job"> <strong>{{mainJob}}</strong></h2>
+    <br>
+    <div class="photo_div">
+      <img style="border: 2px solid white;max-width: 80%;" [src]="photo"><br>
+      <!--<strong>Username: {{username}}</strong><br>-->
+      <button ion-button (click)="addFriend()">Add Friend</button>
 
-  </div>
-  <p class="rating"><strong>Rating: {{rating}}</strong></p><br>
+    </div>
+    <p class="rating"><strong>Rating: {{rating}}</strong></p><br>
 
-  <div class="home-buttons">
-    <button ion-button (click)="showMyGigs()">Find Work</button>
+    <div class="home-buttons">
+      <button ion-button (click)="showMyGigs()">Find Work</button>
 
-    <button ion-button (click)="createGig()">Create gig</button>
+      <button ion-button (click)="createGig()">Create gig</button>
 
-    <button ion-button (click)="showAllGigs()">All Work</button>
-  </div>
-  <h2>Gigs I've posted</h2>
-  <div class="list_of_posted_gigs">
+      <button ion-button (click)="showAllGigs()">All Work</button>
+    </div>
+    <h2>Gigs I've posted</h2>
+    <div class="list_of_posted_gigs">
 
-    <button ion-item *ngFor="let postedGig of postedGigs" (click)="itemTapped($event, postedGig)">
+      <button ion-item *ngFor="let postedGig of postedGigs" (click)="itemTapped($event, postedGig)">
    <h4> {{postedGig.seeking}}</h4>
    <p>{{postedGig.date}}</p>
       <p>  {{postedGig.rate}}</p>
-     
+     <button ion-button (click)="hello()">X</button>
     </button>
-</div>
+    </div>
   </div>
 
-
-<ion-tabs #myTabs>
-  <ion-tab [root]="tab1Root">sadf</ion-tab>
-  <ion-tab [root]="tab2Root">asdf</ion-tab>
-  <ion-tab [root]="tab3Root">asdf</ion-tab>
-</ion-tabs>
 </ion-content>

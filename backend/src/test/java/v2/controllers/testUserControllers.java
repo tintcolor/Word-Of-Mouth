@@ -44,10 +44,18 @@ public class testUserControllers {
     }
 
 
-    @Test
+    @Test// Don't know how to test this yet
     public void testGetOneUser() throws Exception {
         mockMvc.perform(get("/user"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(4)));
+    }
+
+
+    @Test
+    public void testGetAllOtherUsers() throws Exception {
+        mockMvc.perform(get("/users/1"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(3)));
     }
 }
