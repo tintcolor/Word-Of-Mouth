@@ -29753,6 +29753,11 @@ ion-auto-complete ul li:hover {
   text-align: center;
 }
 
+.ios page-gigs .fixed-content,
+.md page-gigs .fixed-content {
+  background: rgba(105, 105, 105, 0.11);
+}
+
 .ios page-home .background,
 .md page-home .background {
   background: url("/assets/img/homepage_bg.jpg");
@@ -29808,9 +29813,6 @@ ion-auto-complete ul li:hover {
 .ios page-home h2,
 .md page-home h2 {
   text-align: center;
-  background: #236936;
-  color: white;
-  padding: 4px;
 }
 
 .ios page-home h2 strong,
@@ -29832,7 +29834,6 @@ ion-auto-complete ul li:hover {
 
 .ios page-home .home-header-box,
 .md page-home .home-header-box {
-  background: #236936;
   width: 100%;
   height: 40%;
 }
@@ -29851,13 +29852,14 @@ ion-auto-complete ul li:hover {
 .ios page-home .button,
 .md page-home .button {
   z-index: 1000;
-  background: #236936;
+  background: #5f5c5c;
   border-radius: 30px;
 }
 
 .ios page-home .menu,
 .md page-home .menu {
   float: left;
+  background: initial;
 }
 
 .ios page-home .signout,
@@ -29873,6 +29875,19 @@ ion-auto-complete ul li:hover {
 .ios page-home .photo_div,
 .md page-home .photo_div {
   text-align: center;
+}
+
+.ios page-home .home-img-bg,
+.md page-home .home-img-bg {
+  position: absolute;
+  z-index: -100;
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+}
+
+.ios page-home .scroll-content,
+.md page-home .scroll-content {
+  background: rgba(105, 105, 105, 0.11);
 }
 
 .ios page-login .header,
@@ -29917,6 +29932,7 @@ ion-auto-complete ul li:hover {
 .ios page-login .input,
 .md page-login .input {
   color: white;
+  background: rgba(220, 214, 214, 0.45);
 }
 
 .ios page-login .input-wrapper .label,
@@ -29965,7 +29981,6 @@ ion-auto-complete ul li:hover {
 
 .ios page-login .list,
 .md page-login .list {
-  background: rgba(52, 52, 52, 0.45);
   border-radius: 18px;
   border-bottom: initial;
 }
@@ -29994,6 +30009,38 @@ ion-auto-complete ul li:hover {
   text-align: center;
 }
 
+.ios page-login .item.item-block .item-inner,
+.md page-login .item.item-block .item-inner {
+  border-bottom: initial;
+}
+
+.ios page-login .login-form-icon,
+.md page-login .login-form-icon {
+  padding: 0 10px 0 10px;
+  border-right: 1px solid #ffffff;
+}
+
+.ios page-login .login-form-spacer,
+.md page-login .login-form-spacer {
+  padding-left: 2%;
+}
+
+.ios page-login .item-md.item-input.item-input-has-focus .item-inner,
+.ios page-login .item-md.item-input.input-has-focus .item-inner,
+.md page-login .item-md.item-input.item-input-has-focus .item-inner,
+.md page-login .item-md.item-input.input-has-focus .item-inner {
+  border-bottom-color: initial;
+  box-shadow: initial;
+}
+
+.ios page-login .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+.ios page-login .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+.md page-login .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+.md page-login .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+  border-bottom-color: initial;
+  box-shadow: initial;
+}
+
 .ios page-mygigs .mygig-card-list,
 .md page-mygigs .mygig-card-list {
   width: 100%;
@@ -30017,6 +30064,16 @@ ion-auto-complete ul li:hover {
 .ios page-postgig .toolbar-title,
 .md page-postgig .toolbar-title {
   text-align: center;
+}
+
+.ios page-postgig .fixed-content,
+.md page-postgig .fixed-content {
+  background: rgba(105, 105, 105, 0.11);
+}
+
+.ios page-postgig .input-cover,
+.md page-postgig .input-cover {
+  background: rgba(105, 105, 105, 0.11);
 }
 
 page-view-one-gig h1 {

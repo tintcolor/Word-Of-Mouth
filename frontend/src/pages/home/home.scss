@@ -39,9 +39,9 @@
         }
         h2 {
             text-align: center;
-            background: #236936;
-            color: white;
-            padding: 4px;
+            // background: #236936;
+            // color: white;
+            // padding: 4px;
             strong {
                 color: white;
                 text-decoration: underline;
@@ -59,7 +59,7 @@
             // text-align: center;
         }
         .home-header-box {
-            background: #236936;
+            // background: #236936;
             width: 100%;
             height: 40%; // position: relative;
             // top: -12%;
@@ -72,11 +72,12 @@
         }
         .button {
             z-index: 1000;
-            background: #236936;
+               background: rgb(95, 92, 92);
             border-radius: 30px;
         }
         .menu {
             float: left;
+            background:initial;
         }
         .signout {
             float: right;
@@ -86,6 +87,14 @@
         }
         .photo_div {
             text-align: center;
+        }
+        .home-img-bg{
+            position: absolute;
+    z-index: -100;
+     filter:blur(2px);
+        }
+        .scroll-content{
+            background: rgba(105, 105, 105, 0.11);
         }
     }
 }

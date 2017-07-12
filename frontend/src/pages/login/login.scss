@@ -30,6 +30,7 @@
         }
         .input {
             color: white;
+            background: rgba(220, 214, 214, 0.45);
         }
         .input-wrapper .label {
             color: white; // font-size: 32px;
@@ -60,7 +61,7 @@
             height: 200px;
         }
         .list {
-            background: rgba(52, 52, 52, 0.45);
+            // background: rgba(52, 52, 52, 0.45);
             border-radius: 18px;
             border-bottom: initial;
         }
@@ -79,6 +80,26 @@
         }
         .text-input {
             text-align: center;
+        }
+        .item.item-block .item-inner {
+            border-bottom: initial;
+        }
+        .login-form-icon {
+            padding: 0 10px 0 10px; // transform: scale(1.5, 1.5);
+            border-right: 1px solid #ffffff;
+        }
+        .login-form-spacer {
+            padding-left: 2%;
+        }
+        .item-md.item-input.item-input-has-focus .item-inner,
+        .item-md.item-input.input-has-focus .item-inner {
+            border-bottom-color: initial;
+            box-shadow: initial;
+        }
+        .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+        .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+            border-bottom-color: initial;
+            box-shadow: initial;
         }
     }
 }
