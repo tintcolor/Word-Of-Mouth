@@ -38,8 +38,7 @@
             background-color: rgba(255, 255, 255, 0.13);
         }
         h2 {
-            text-align: center;
-            // background: #236936;
+            text-align: center; // background: #236936;
             // color: white;
             // padding: 4px;
             strong {
@@ -52,7 +51,7 @@
         }
         .home-buttons {
             text-align: center;
-            display:none;
+            display: none;
         }
         .header-logo {}
         .toolbar-title {
@@ -72,13 +71,13 @@
         }
         .button {
             z-index: 1000;
-               background: rgb(95, 92, 92);
+            background: rgb(95, 92, 92);
             border-radius: 30px;
         }
         .menu {
             float: left;
-            background:initial;
-        }
+            background: initial;
+        } 
         .signout {
             float: right;
         }
@@ -88,12 +87,12 @@
         .photo_div {
             text-align: center;
         }
-        .home-img-bg{
+        .home-img-bg {
             position: absolute;
-    z-index: -100;
-     filter:blur(2px);
+            z-index: -100;
+            filter: blur(2px);
         }
-        .scroll-content{
+        .scroll-content {
             background: rgba(105, 105, 105, 0.11);
         }
     }

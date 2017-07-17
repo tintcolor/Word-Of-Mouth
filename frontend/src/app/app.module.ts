@@ -10,6 +10,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { NavController } from 'ionic-angular';
 import { AutoCompleteModule } from 'ionic2-auto-complete';
+import { Push, PushObject, PushOptions } from '@ionic-native/push';
+
 
 import { MyApp } from './app.component';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -108,6 +110,7 @@ const routes: Routes = [
     AuthService,
     CompleteTestService,
     HomeService,
+    Push,
     JwtHelper, {
       provide: AuthHttp,
       useFactory: authHttpServiceFactory,

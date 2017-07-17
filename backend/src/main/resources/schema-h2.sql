@@ -16,22 +16,6 @@ CREATE TABLE USERS (
 --
 
 
-INSERT INTO users (username, password, name, first_name, main_job, side_job, email, rating, photo, connectorid)
-VALUES
-  ('mickey', 'cheese', 'Mickey Mouse', 'Mickey', 'Sound Mixer', 'Editor', 'soma@as.com', 3, 'assets/img/man1.jpg', 1);
-
-INSERT INTO users (username, password, name, first_name, main_job, side_job, email, rating, photo, connectorid) VALUES
-  ('minnie', 'cheese', 'Minnie Mouse', 'Minnie', 'Sound Editor', 'Editor', 'Lasdlk@as.com', 4, '/assets/img/woman1.jpg',
-   2);
-
-INSERT INTO users (username, password, name, first_name, main_job, side_job, email, rating, photo, connectorid) VALUES
-  ('lucy', 'cheese', 'Lucy Lawless', 'Lucy', 'Director', 'Being Awesome', 'titanic@imawesome.com', 5,
-   '/assets/img/woman2.jpg', 3);
-
-INSERT INTO users (username, password, name, first_name, main_job, side_job, email, rating, photo, connectorid) VALUES
-  ('daffy', 'cheese', 'Daffy Duck ', 'Daffy', 'Boom Operator', 'Boom Operator', 'Lasdlk@as.com', 4,
-   'http://img.img.com',
-   2);
 
 -- insert into users (username, password, first_name, last_name, main_job, side_job, rating, photo) values( 'leo@disney.com', '$2a$10$kSqU.ek5pDRMMK21tHJlceS1xOc9Kna4F0DD2ZwQH/LAzH0ML0p6.', 'Minnie','Mouse','Editor','LLALLA',5,'http://img.ASDF.com');
 -- insert into users (username, password, first_name, last_name, main_job, side_job, rating, photo) values( 'admin', 'admin', 'Admin','Admin','Admin','LLALLA',5,'http://img.ASDF.com');
